@@ -1,0 +1,19 @@
+- name: Install, Configure and Deploy web page in nginx web server
+  hosts: all
+  vars_files:
+    - my_var_file
+  tasks:
+    - name: Install nginx web server
+      apt: name=nginx state=latest update_cache=yes
+
+    - name: Configure nginx document root folder
+      copy: src=default dest=/etc/nginx/sites-available/default backup=yes
+
+    - name: Create Document root folder
+      file: path=/var/html state=directory mode=0777
+
+    - name: Deploy our customized web page in nginx web server
+      template: src=index.html.j2 dest=/var/html/index.html
+
+    - name: Restart the nginx web server
+      shell: service nginx restart

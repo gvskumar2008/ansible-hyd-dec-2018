@@ -1,0 +1,7 @@
+- name: Demonstrates use of sequence loop 
+  hosts: localhost
+  gather_facts: False 
+  tasks:
+    - name: Print numbers
+      debug: var="{{item}}"
+      with_sequence: start=1  end=5

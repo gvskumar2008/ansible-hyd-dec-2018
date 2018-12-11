@@ -1,0 +1,31 @@
+- name: This playbook will provision docker containers
+  hosts: localhost
+  gather_facts: False
+
+  pre_tasks:
+     - name: Remove all existing containers
+       shell: docker rm -f $(docker ps -aq)
+       ignore_errors: True
+  
+  tasks:
+    - name: Install Extra Packages for Enterprise Linux
+      yum: name=epel-release state=latest
+
+    - name: Install Python Package Installer
+      #apt: name=python-pip state=latest update_cache=yes
+      yum: name=python-pip state=latest
+
+    - name: Install docker-py python package
+      shell: pip install docker-py
+
+    - name: Provision an Ubuntu container
+      docker_container:
+          name: "ubuntu{{item}}"
+          image: "tektutor/ansible-ubuntu"
+          state: started
+          hostname: "ubuntu{{item}}"
+          ports:
+            - "2{{item}}:22"
+            - "9{{item}}:80"
+      with_sequence: start=1 end=99 format="%03i"
+          

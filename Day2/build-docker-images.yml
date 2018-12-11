@@ -1,0 +1,9 @@
+- name: This playbook automates docker image build
+  hosts: localhost
+  tasks:
+    - name: Build ansible ubuntu images
+      docker_image:
+         name: "tektutor/ansible-ubuntu"
+         dockerfile: UbuntuDockerfile
+         path: .
+         state: build
