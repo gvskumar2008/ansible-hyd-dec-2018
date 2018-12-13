@@ -3,7 +3,15 @@
   roles:
     - nginx 
 
+- name: Auto-generate nginx load-balancer configuration
+  hosts: localhost
+  tasks:
+    - name: Invoke the playbook that generates nginx conf file
+      shell: ansible-playbook generate-nginx-conf.yml
+    - name: Copy the nginx.conf inside nginx-load-balancer role
+      shell: cp nginx.conf nginx-load-balancer/files/nginx.conf
+
 - name: Setup load balancer
   hosts: loadbalancer
-  roles
+  roles:
     - nginx-load-balancer

@@ -1,0 +1,5 @@
+- name: Creates nginx load balancing configuration
+  hosts: localhost
+  tasks:
+    - name: Create nginx load balancing configuration
+      configure_nginx_loadbalance:  serverCount=100 startingIPAddress="172.17.0.2"

@@ -77,3 +77,284 @@ this message.
 2018-12-13 13:02:20,680 p=27484 u=root |  loadbalancer               : ok=8    changed=5    unreachable=0    failed=0   
 2018-12-13 13:02:20,680 p=27484 u=root |  ubuntu001                  : ok=8    changed=5    unreachable=0    failed=0   
 2018-12-13 13:02:20,680 p=27484 u=root |  ubuntu002                  : ok=8    changed=5    unreachable=0    failed=0   
+2018-12-13 14:40:52,788 p=36275 u=root |  - nginx-load-balancer was created successfully
+2018-12-13 14:41:54,063 p=36744 u=root |  ERROR! Syntax Error while loading YAML.
+  could not find expected ':'
+
+The error appears to have been in '/root/Training/Day4/AnsibleRole-Nginx-LB/playbook.yml': line 16, column 1, but may
+be elsewhere in the file depending on the exact syntax problem.
+
+(specified line no longer in file, maybe it changed?)
+2018-12-13 14:42:20,597 p=36851 u=root |  PLAY [Setup nginx] *************************************************************
+2018-12-13 14:42:20,605 p=36851 u=root |  TASK [Gathering Facts] *********************************************************
+2018-12-13 14:42:21,270 p=36851 u=root |  ok: [ubuntu002]
+2018-12-13 14:42:21,281 p=36851 u=root |  ok: [loadbalancer]
+2018-12-13 14:42:21,305 p=36851 u=root |  ok: [ubuntu001]
+2018-12-13 14:42:21,545 p=36851 u=root |  ok: [centos001]
+2018-12-13 14:42:21,572 p=36851 u=root |  ok: [centos002]
+2018-12-13 14:42:21,584 p=36851 u=root |  TASK [nginx : include] *********************************************************
+2018-12-13 14:42:21,711 p=36851 u=root |  included: /root/Training/Day4/AnsibleRole-Nginx-LB/nginx/tasks/install-Ubuntu.yml for ubuntu002, ubuntu001, loadbalancer
+2018-12-13 14:42:21,714 p=36851 u=root |  included: /root/Training/Day4/AnsibleRole-Nginx-LB/nginx/tasks/install-CentOS.yml for centos001, centos002
+2018-12-13 14:42:21,727 p=36851 u=root |  TASK [nginx : Install nginx web server in Ubuntu] ******************************
+2018-12-13 14:42:26,525 p=36851 u=root |  ok: [ubuntu002]
+2018-12-13 14:42:26,561 p=36851 u=root |  ok: [loadbalancer]
+2018-12-13 14:42:26,608 p=36851 u=root |  ok: [ubuntu001]
+2018-12-13 14:42:26,626 p=36851 u=root |  TASK [nginx : Install Extra Package for Enterprise Linux in CentOS] ************
+2018-12-13 14:42:34,657 p=36851 u=root |  ok: [centos002]
+2018-12-13 14:42:34,677 p=36851 u=root |  ok: [centos001]
+2018-12-13 14:42:34,692 p=36851 u=root |  TASK [nginx : Install nginx web server in CentOS] ******************************
+2018-12-13 14:42:41,627 p=36851 u=root |  ok: [centos001]
+2018-12-13 14:42:41,635 p=36851 u=root |  ok: [centos002]
+2018-12-13 14:42:41,647 p=36851 u=root |  TASK [nginx : include] *********************************************************
+2018-12-13 14:42:41,782 p=36851 u=root |  included: /root/Training/Day4/AnsibleRole-Nginx-LB/nginx/tasks/configure-Ubuntu.yml for ubuntu002, ubuntu001, loadbalancer
+2018-12-13 14:42:41,784 p=36851 u=root |  included: /root/Training/Day4/AnsibleRole-Nginx-LB/nginx/tasks/configure-CentOS.yml for centos001, centos002
+2018-12-13 14:42:41,801 p=36851 u=root |  TASK [nginx : Configure nginx document root folder in Ubuntu] ******************
+2018-12-13 14:42:42,375 p=36851 u=root |  ok: [loadbalancer]
+2018-12-13 14:42:42,379 p=36851 u=root |  ok: [ubuntu001]
+2018-12-13 14:42:42,380 p=36851 u=root |  ok: [ubuntu002]
+2018-12-13 14:42:42,396 p=36851 u=root |  TASK [nginx : Configure nginx document root folder in CentOS] ******************
+2018-12-13 14:42:42,735 p=36851 u=root |  ok: [centos001]
+2018-12-13 14:42:42,761 p=36851 u=root |  ok: [centos002]
+2018-12-13 14:42:42,772 p=36851 u=root |  TASK [nginx : Create document root folder] *************************************
+2018-12-13 14:42:43,108 p=36851 u=root |  ok: [ubuntu001]
+2018-12-13 14:42:43,113 p=36851 u=root |  ok: [ubuntu002]
+2018-12-13 14:42:43,130 p=36851 u=root |  ok: [loadbalancer]
+2018-12-13 14:42:43,142 p=36851 u=root |  ok: [centos001]
+2018-12-13 14:42:43,164 p=36851 u=root |  ok: [centos002]
+2018-12-13 14:42:43,176 p=36851 u=root |  TASK [nginx : Deploy customized web page] **************************************
+2018-12-13 14:42:43,639 p=36851 u=root |  ok: [ubuntu002]
+2018-12-13 14:42:43,733 p=36851 u=root |  ok: [centos001]
+2018-12-13 14:42:43,740 p=36851 u=root |  ok: [ubuntu001]
+2018-12-13 14:42:43,770 p=36851 u=root |  ok: [centos002]
+2018-12-13 14:42:43,790 p=36851 u=root |  ok: [loadbalancer]
+2018-12-13 14:42:43,799 p=36851 u=root |  PLAY [Auto-generate nginx load-balancer configuration] *************************
+2018-12-13 14:42:43,804 p=36851 u=root |  TASK [Gathering Facts] *********************************************************
+2018-12-13 14:42:44,276 p=36851 u=root |  ok: [localhost]
+2018-12-13 14:42:44,301 p=36851 u=root |  TASK [Invoke the playbook that generates nginx conf file] **********************
+2018-12-13 14:42:44,973 p=38669 u=root |  PLAY [Creates nginx load balancing configuration] ******************************
+2018-12-13 14:42:44,979 p=38669 u=root |  TASK [Gathering Facts] *********************************************************
+2018-12-13 14:42:45,627 p=38669 u=root |  ok: [localhost]
+2018-12-13 14:42:45,654 p=38669 u=root |  TASK [Create nginx load balancing configuration] *******************************
+2018-12-13 14:42:45,880 p=38669 u=root |  changed: [localhost]
+2018-12-13 14:42:45,882 p=38669 u=root |  PLAY RECAP *********************************************************************
+2018-12-13 14:42:45,882 p=38669 u=root |  localhost                  : ok=2    changed=1    unreachable=0    failed=0   
+2018-12-13 14:42:45,935 p=36851 u=root |  changed: [localhost]
+2018-12-13 14:42:45,936 p=36851 u=root |  PLAY RECAP *********************************************************************
+2018-12-13 14:42:45,937 p=36851 u=root |  centos001                  : ok=8    changed=0    unreachable=0    failed=0   
+2018-12-13 14:42:45,937 p=36851 u=root |  centos002                  : ok=8    changed=0    unreachable=0    failed=0   
+2018-12-13 14:42:45,937 p=36851 u=root |  loadbalancer               : ok=7    changed=0    unreachable=0    failed=0   
+2018-12-13 14:42:45,937 p=36851 u=root |  localhost                  : ok=2    changed=1    unreachable=0    failed=0   
+2018-12-13 14:42:45,937 p=36851 u=root |  ubuntu001                  : ok=7    changed=0    unreachable=0    failed=0   
+2018-12-13 14:42:45,937 p=36851 u=root |  ubuntu002                  : ok=7    changed=0    unreachable=0    failed=0   
+2018-12-13 14:44:50,201 p=39169 u=root |  PLAY [Setup nginx] *************************************************************
+2018-12-13 14:44:50,209 p=39169 u=root |  TASK [Gathering Facts] *********************************************************
+2018-12-13 14:44:50,896 p=39169 u=root |  ok: [loadbalancer]
+2018-12-13 14:44:50,902 p=39169 u=root |  ok: [ubuntu001]
+2018-12-13 14:44:50,941 p=39169 u=root |  ok: [ubuntu002]
+2018-12-13 14:44:51,161 p=39169 u=root |  ok: [centos001]
+2018-12-13 14:44:51,182 p=39169 u=root |  ok: [centos002]
+2018-12-13 14:44:51,193 p=39169 u=root |  TASK [nginx : include] *********************************************************
+2018-12-13 14:44:51,321 p=39169 u=root |  included: /root/Training/Day4/AnsibleRole-Nginx-LB/nginx/tasks/install-Ubuntu.yml for ubuntu002, ubuntu001, loadbalancer
+2018-12-13 14:44:51,325 p=39169 u=root |  included: /root/Training/Day4/AnsibleRole-Nginx-LB/nginx/tasks/install-CentOS.yml for centos001, centos002
+2018-12-13 14:44:51,337 p=39169 u=root |  TASK [nginx : Install nginx web server in Ubuntu] ******************************
+2018-12-13 14:44:55,601 p=39169 u=root |  ok: [ubuntu001]
+2018-12-13 14:44:55,627 p=39169 u=root |  ok: [ubuntu002]
+2018-12-13 14:44:55,671 p=39169 u=root |  ok: [loadbalancer]
+2018-12-13 14:44:55,687 p=39169 u=root |  TASK [nginx : Install Extra Package for Enterprise Linux in CentOS] ************
+2018-12-13 14:45:02,737 p=39169 u=root |  ok: [centos001]
+2018-12-13 14:45:02,856 p=39169 u=root |  ok: [centos002]
+2018-12-13 14:45:02,869 p=39169 u=root |  TASK [nginx : Install nginx web server in CentOS] ******************************
+2018-12-13 14:45:09,779 p=39169 u=root |  ok: [centos001]
+2018-12-13 14:45:09,787 p=39169 u=root |  ok: [centos002]
+2018-12-13 14:45:09,799 p=39169 u=root |  TASK [nginx : include] *********************************************************
+2018-12-13 14:45:09,939 p=39169 u=root |  included: /root/Training/Day4/AnsibleRole-Nginx-LB/nginx/tasks/configure-Ubuntu.yml for ubuntu002, ubuntu001, loadbalancer
+2018-12-13 14:45:09,942 p=39169 u=root |  included: /root/Training/Day4/AnsibleRole-Nginx-LB/nginx/tasks/configure-CentOS.yml for centos001, centos002
+2018-12-13 14:45:09,959 p=39169 u=root |  TASK [nginx : Configure nginx document root folder in Ubuntu] ******************
+2018-12-13 14:45:10,503 p=39169 u=root |  ok: [ubuntu002]
+2018-12-13 14:45:10,515 p=39169 u=root |  ok: [loadbalancer]
+2018-12-13 14:45:10,518 p=39169 u=root |  ok: [ubuntu001]
+2018-12-13 14:45:10,532 p=39169 u=root |  TASK [nginx : Configure nginx document root folder in CentOS] ******************
+2018-12-13 14:45:10,874 p=39169 u=root |  ok: [centos001]
+2018-12-13 14:45:10,891 p=39169 u=root |  ok: [centos002]
+2018-12-13 14:45:10,902 p=39169 u=root |  TASK [nginx : Create document root folder] *************************************
+2018-12-13 14:45:11,250 p=39169 u=root |  ok: [centos001]
+2018-12-13 14:45:11,253 p=39169 u=root |  ok: [ubuntu001]
+2018-12-13 14:45:11,255 p=39169 u=root |  ok: [centos002]
+2018-12-13 14:45:11,260 p=39169 u=root |  ok: [ubuntu002]
+2018-12-13 14:45:11,300 p=39169 u=root |  ok: [loadbalancer]
+2018-12-13 14:45:11,313 p=39169 u=root |  TASK [nginx : Deploy customized web page] **************************************
+2018-12-13 14:45:11,782 p=39169 u=root |  ok: [ubuntu002]
+2018-12-13 14:45:11,870 p=39169 u=root |  ok: [ubuntu001]
+2018-12-13 14:45:11,877 p=39169 u=root |  ok: [centos002]
+2018-12-13 14:45:11,886 p=39169 u=root |  ok: [loadbalancer]
+2018-12-13 14:45:11,890 p=39169 u=root |  ok: [centos001]
+2018-12-13 14:45:11,898 p=39169 u=root |  PLAY [Auto-generate nginx load-balancer configuration] *************************
+2018-12-13 14:45:11,904 p=39169 u=root |  TASK [Gathering Facts] *********************************************************
+2018-12-13 14:45:12,362 p=39169 u=root |  ok: [localhost]
+2018-12-13 14:45:12,385 p=39169 u=root |  TASK [Invoke the playbook that generates nginx conf file] **********************
+2018-12-13 14:45:13,040 p=40981 u=root |  PLAY [Creates nginx load balancing configuration] ******************************
+2018-12-13 14:45:13,047 p=40981 u=root |  TASK [Gathering Facts] *********************************************************
+2018-12-13 14:45:13,677 p=40981 u=root |  ok: [localhost]
+2018-12-13 14:45:13,703 p=40981 u=root |  TASK [Create nginx load balancing configuration] *******************************
+2018-12-13 14:45:13,924 p=40981 u=root |  changed: [localhost]
+2018-12-13 14:45:13,926 p=40981 u=root |  PLAY RECAP *********************************************************************
+2018-12-13 14:45:13,926 p=40981 u=root |  localhost                  : ok=2    changed=1    unreachable=0    failed=0   
+2018-12-13 14:45:13,977 p=39169 u=root |  changed: [localhost]
+2018-12-13 14:45:14,006 p=39169 u=root |  TASK [Copy the nginx.conf inside nginx-load-balancer role] *********************
+2018-12-13 14:45:14,140 p=39169 u=root |  changed: [localhost]
+2018-12-13 14:45:14,141 p=39169 u=root |  PLAY RECAP *********************************************************************
+2018-12-13 14:45:14,142 p=39169 u=root |  centos001                  : ok=8    changed=0    unreachable=0    failed=0   
+2018-12-13 14:45:14,142 p=39169 u=root |  centos002                  : ok=8    changed=0    unreachable=0    failed=0   
+2018-12-13 14:45:14,142 p=39169 u=root |  loadbalancer               : ok=7    changed=0    unreachable=0    failed=0   
+2018-12-13 14:45:14,142 p=39169 u=root |  localhost                  : ok=3    changed=2    unreachable=0    failed=0   
+2018-12-13 14:45:14,142 p=39169 u=root |  ubuntu001                  : ok=7    changed=0    unreachable=0    failed=0   
+2018-12-13 14:45:14,142 p=39169 u=root |  ubuntu002                  : ok=7    changed=0    unreachable=0    failed=0   
+2018-12-13 14:49:24,668 p=42761 u=root |  PLAY [Setup nginx] *************************************************************
+2018-12-13 14:49:24,676 p=42761 u=root |  TASK [Gathering Facts] *********************************************************
+2018-12-13 14:49:25,357 p=42761 u=root |  ok: [loadbalancer]
+2018-12-13 14:49:25,359 p=42761 u=root |  ok: [ubuntu001]
+2018-12-13 14:49:25,366 p=42761 u=root |  ok: [ubuntu002]
+2018-12-13 14:49:25,577 p=42761 u=root |  ok: [centos001]
+2018-12-13 14:49:25,579 p=42761 u=root |  ok: [centos002]
+2018-12-13 14:49:25,589 p=42761 u=root |  TASK [nginx : include] *********************************************************
+2018-12-13 14:49:25,714 p=42761 u=root |  included: /root/Training/Day4/AnsibleRole-Nginx-LB/nginx/tasks/install-Ubuntu.yml for ubuntu002, ubuntu001, loadbalancer
+2018-12-13 14:49:25,717 p=42761 u=root |  included: /root/Training/Day4/AnsibleRole-Nginx-LB/nginx/tasks/install-CentOS.yml for centos001, centos002
+2018-12-13 14:49:25,730 p=42761 u=root |  TASK [nginx : Install nginx web server in Ubuntu] ******************************
+2018-12-13 14:49:30,026 p=42761 u=root |  ok: [ubuntu001]
+2018-12-13 14:49:31,375 p=42761 u=root |  ok: [ubuntu002]
+2018-12-13 14:49:31,408 p=42761 u=root |  ok: [loadbalancer]
+2018-12-13 14:49:31,424 p=42761 u=root |  TASK [nginx : Install Extra Package for Enterprise Linux in CentOS] ************
+2018-12-13 14:49:38,532 p=42761 u=root |  ok: [centos002]
+2018-12-13 14:49:38,653 p=42761 u=root |  ok: [centos001]
+2018-12-13 14:49:38,668 p=42761 u=root |  TASK [nginx : Install nginx web server in CentOS] ******************************
+2018-12-13 14:49:45,577 p=42761 u=root |  ok: [centos001]
+2018-12-13 14:49:45,762 p=42761 u=root |  ok: [centos002]
+2018-12-13 14:49:45,774 p=42761 u=root |  TASK [nginx : include] *********************************************************
+2018-12-13 14:49:45,903 p=42761 u=root |  included: /root/Training/Day4/AnsibleRole-Nginx-LB/nginx/tasks/configure-Ubuntu.yml for ubuntu002, ubuntu001, loadbalancer
+2018-12-13 14:49:45,905 p=42761 u=root |  included: /root/Training/Day4/AnsibleRole-Nginx-LB/nginx/tasks/configure-CentOS.yml for centos001, centos002
+2018-12-13 14:49:45,921 p=42761 u=root |  TASK [nginx : Configure nginx document root folder in Ubuntu] ******************
+2018-12-13 14:49:46,464 p=42761 u=root |  ok: [loadbalancer]
+2018-12-13 14:49:46,477 p=42761 u=root |  ok: [ubuntu001]
+2018-12-13 14:49:46,495 p=42761 u=root |  ok: [ubuntu002]
+2018-12-13 14:49:46,511 p=42761 u=root |  TASK [nginx : Configure nginx document root folder in CentOS] ******************
+2018-12-13 14:49:46,842 p=42761 u=root |  ok: [centos001]
+2018-12-13 14:49:46,865 p=42761 u=root |  ok: [centos002]
+2018-12-13 14:49:46,877 p=42761 u=root |  TASK [nginx : Create document root folder] *************************************
+2018-12-13 14:49:47,189 p=42761 u=root |  ok: [ubuntu002]
+2018-12-13 14:49:47,194 p=42761 u=root |  ok: [centos001]
+2018-12-13 14:49:47,226 p=42761 u=root |  ok: [loadbalancer]
+2018-12-13 14:49:47,231 p=42761 u=root |  ok: [centos002]
+2018-12-13 14:49:47,246 p=42761 u=root |  ok: [ubuntu001]
+2018-12-13 14:49:47,259 p=42761 u=root |  TASK [nginx : Deploy customized web page] **************************************
+2018-12-13 14:49:47,756 p=42761 u=root |  ok: [ubuntu002]
+2018-12-13 14:49:47,760 p=42761 u=root |  ok: [ubuntu001]
+2018-12-13 14:49:47,764 p=42761 u=root |  ok: [centos001]
+2018-12-13 14:49:47,821 p=42761 u=root |  ok: [loadbalancer]
+2018-12-13 14:49:47,839 p=42761 u=root |  ok: [centos002]
+2018-12-13 14:49:47,847 p=42761 u=root |  PLAY [Auto-generate nginx load-balancer configuration] *************************
+2018-12-13 14:49:47,852 p=42761 u=root |  TASK [Gathering Facts] *********************************************************
+2018-12-13 14:49:48,309 p=42761 u=root |  ok: [localhost]
+2018-12-13 14:49:48,334 p=42761 u=root |  TASK [Invoke the playbook that generates nginx conf file] **********************
+2018-12-13 14:49:48,985 p=44582 u=root |  PLAY [Creates nginx load balancing configuration] ******************************
+2018-12-13 14:49:48,992 p=44582 u=root |  TASK [Gathering Facts] *********************************************************
+2018-12-13 14:49:49,622 p=44582 u=root |  ok: [localhost]
+2018-12-13 14:49:49,648 p=44582 u=root |  TASK [Create nginx load balancing configuration] *******************************
+2018-12-13 14:49:49,867 p=44582 u=root |  changed: [localhost]
+2018-12-13 14:49:49,869 p=44582 u=root |  PLAY RECAP *********************************************************************
+2018-12-13 14:49:49,869 p=44582 u=root |  localhost                  : ok=2    changed=1    unreachable=0    failed=0   
+2018-12-13 14:49:49,919 p=42761 u=root |  changed: [localhost]
+2018-12-13 14:49:49,947 p=42761 u=root |  TASK [Copy the nginx.conf inside nginx-load-balancer role] *********************
+2018-12-13 14:49:50,080 p=42761 u=root |  changed: [localhost]
+2018-12-13 14:49:50,085 p=42761 u=root |  PLAY [Setup load balancer] *****************************************************
+2018-12-13 14:49:50,095 p=42761 u=root |  TASK [Gathering Facts] *********************************************************
+2018-12-13 14:49:50,340 p=42761 u=root |  ok: [loadbalancer]
+2018-12-13 14:49:50,349 p=42761 u=root |  TASK [nginx-load-balancer : Configure nginx load balancer] *********************
+2018-12-13 14:49:50,769 p=42761 u=root |  changed: [loadbalancer]
+2018-12-13 14:49:50,771 p=42761 u=root |  RUNNING HANDLER [nginx-load-balancer : Restart nginx web server] ***************
+2018-12-13 14:49:52,000 p=42761 u=root |   [WARNING]: Consider using the service module rather than running service.  If
+you need to use command because service is insufficient you can add warn=False
+to this command task or set command_warnings=False in ansible.cfg to get rid of
+this message.
+
+2018-12-13 14:49:52,001 p=42761 u=root |  changed: [loadbalancer]
+2018-12-13 14:49:52,002 p=42761 u=root |  PLAY RECAP *********************************************************************
+2018-12-13 14:49:52,002 p=42761 u=root |  centos001                  : ok=8    changed=0    unreachable=0    failed=0   
+2018-12-13 14:49:52,002 p=42761 u=root |  centos002                  : ok=8    changed=0    unreachable=0    failed=0   
+2018-12-13 14:49:52,002 p=42761 u=root |  loadbalancer               : ok=10   changed=2    unreachable=0    failed=0   
+2018-12-13 14:49:52,002 p=42761 u=root |  localhost                  : ok=3    changed=2    unreachable=0    failed=0   
+2018-12-13 14:49:52,002 p=42761 u=root |  ubuntu001                  : ok=7    changed=0    unreachable=0    failed=0   
+2018-12-13 14:49:52,002 p=42761 u=root |  ubuntu002                  : ok=7    changed=0    unreachable=0    failed=0   
+2018-12-13 17:16:53,925 p=55740 u=root |  PLAY [Setup nginx] *************************************************************
+2018-12-13 17:16:53,933 p=55740 u=root |  TASK [Gathering Facts] *********************************************************
+2018-12-13 17:16:54,598 p=55740 u=root |  ok: [172.17.0.3]
+2018-12-13 17:16:54,611 p=55740 u=root |  ok: [172.17.0.6]
+2018-12-13 17:16:54,614 p=55740 u=root |  ok: [172.17.0.2]
+2018-12-13 17:16:54,846 p=55740 u=root |  ok: [172.17.0.4]
+2018-12-13 17:16:54,884 p=55740 u=root |  ok: [172.17.0.5]
+2018-12-13 17:16:54,895 p=55740 u=root |  TASK [nginx : include] *********************************************************
+2018-12-13 17:16:55,020 p=55740 u=root |  included: /root/Training/Day4/AnsibleRole-Nginx-LB/nginx/tasks/install-Ubuntu.yml for 172.17.0.3, 172.17.0.6, 172.17.0.2
+2018-12-13 17:16:55,023 p=55740 u=root |  included: /root/Training/Day4/AnsibleRole-Nginx-LB/nginx/tasks/install-CentOS.yml for 172.17.0.4, 172.17.0.5
+2018-12-13 17:16:55,036 p=55740 u=root |  TASK [nginx : Install nginx web server in Ubuntu] ******************************
+2018-12-13 17:16:59,950 p=55740 u=root |  ok: [172.17.0.2]
+2018-12-13 17:17:00,003 p=55740 u=root |  ok: [172.17.0.6]
+2018-12-13 17:17:00,115 p=55740 u=root |  ok: [172.17.0.3]
+2018-12-13 17:17:00,129 p=55740 u=root |  TASK [nginx : Install Extra Package for Enterprise Linux in CentOS] ************
+2018-12-13 17:17:07,403 p=55740 u=root |  ok: [172.17.0.5]
+2018-12-13 17:17:08,403 p=55740 u=root |  ok: [172.17.0.4]
+2018-12-13 17:17:08,416 p=55740 u=root |  TASK [nginx : Install nginx web server in CentOS] ******************************
+2018-12-13 17:17:15,364 p=55740 u=root |  ok: [172.17.0.5]
+2018-12-13 17:17:15,365 p=55740 u=root |  ok: [172.17.0.4]
+2018-12-13 17:17:15,376 p=55740 u=root |  TASK [nginx : include] *********************************************************
+2018-12-13 17:17:15,507 p=55740 u=root |  included: /root/Training/Day4/AnsibleRole-Nginx-LB/nginx/tasks/configure-Ubuntu.yml for 172.17.0.3, 172.17.0.6, 172.17.0.2
+2018-12-13 17:17:15,509 p=55740 u=root |  included: /root/Training/Day4/AnsibleRole-Nginx-LB/nginx/tasks/configure-CentOS.yml for 172.17.0.4, 172.17.0.5
+2018-12-13 17:17:15,524 p=55740 u=root |  TASK [nginx : Configure nginx document root folder in Ubuntu] ******************
+2018-12-13 17:17:16,069 p=55740 u=root |  ok: [172.17.0.3]
+2018-12-13 17:17:16,073 p=55740 u=root |  ok: [172.17.0.6]
+2018-12-13 17:17:16,078 p=55740 u=root |  ok: [172.17.0.2]
+2018-12-13 17:17:16,093 p=55740 u=root |  TASK [nginx : Configure nginx document root folder in CentOS] ******************
+2018-12-13 17:17:16,412 p=55740 u=root |  ok: [172.17.0.4]
+2018-12-13 17:17:16,435 p=55740 u=root |  ok: [172.17.0.5]
+2018-12-13 17:17:16,445 p=55740 u=root |  TASK [nginx : Create document root folder] *************************************
+2018-12-13 17:17:16,710 p=55740 u=root |  ok: [172.17.0.3]
+2018-12-13 17:17:16,787 p=55740 u=root |  ok: [172.17.0.2]
+2018-12-13 17:17:16,800 p=55740 u=root |  ok: [172.17.0.6]
+2018-12-13 17:17:16,805 p=55740 u=root |  ok: [172.17.0.4]
+2018-12-13 17:17:16,808 p=55740 u=root |  ok: [172.17.0.5]
+2018-12-13 17:17:16,821 p=55740 u=root |  TASK [nginx : Deploy customized web page] **************************************
+2018-12-13 17:17:17,248 p=55740 u=root |  ok: [172.17.0.3]
+2018-12-13 17:17:17,355 p=55740 u=root |  ok: [172.17.0.6]
+2018-12-13 17:17:17,388 p=55740 u=root |  ok: [172.17.0.2]
+2018-12-13 17:17:17,389 p=55740 u=root |  ok: [172.17.0.4]
+2018-12-13 17:17:17,422 p=55740 u=root |  ok: [172.17.0.5]
+2018-12-13 17:17:17,430 p=55740 u=root |  PLAY [Auto-generate nginx load-balancer configuration] *************************
+2018-12-13 17:17:17,435 p=55740 u=root |  TASK [Gathering Facts] *********************************************************
+2018-12-13 17:17:17,873 p=55740 u=root |  ok: [localhost]
+2018-12-13 17:17:17,897 p=55740 u=root |  TASK [Invoke the playbook that generates nginx conf file] **********************
+2018-12-13 17:17:20,622 p=58170 u=root |  PLAY [Creates nginx load balancing configuration] ******************************
+2018-12-13 17:17:20,628 p=58170 u=root |  TASK [Gathering Facts] *********************************************************
+2018-12-13 17:17:21,258 p=58170 u=root |  ok: [localhost]
+2018-12-13 17:17:21,283 p=58170 u=root |  TASK [Create nginx load balancing configuration] *******************************
+2018-12-13 17:17:21,515 p=58170 u=root |  changed: [localhost]
+2018-12-13 17:17:21,516 p=58170 u=root |  PLAY RECAP *********************************************************************
+2018-12-13 17:17:21,517 p=58170 u=root |  localhost                  : ok=2    changed=1    unreachable=0    failed=0   
+2018-12-13 17:17:21,566 p=55740 u=root |  changed: [localhost]
+2018-12-13 17:17:21,594 p=55740 u=root |  TASK [Copy the nginx.conf inside nginx-load-balancer role] *********************
+2018-12-13 17:17:21,726 p=55740 u=root |  changed: [localhost]
+2018-12-13 17:17:21,730 p=55740 u=root |   [WARNING]: Could not match supplied host pattern, ignoring: loadbalancer
+
+2018-12-13 17:17:21,732 p=55740 u=root |  PLAY [Setup load balancer] *****************************************************
+2018-12-13 17:17:21,732 p=55740 u=root |  skipping: no hosts matched
+2018-12-13 17:17:21,732 p=55740 u=root |  PLAY RECAP *********************************************************************
+2018-12-13 17:17:21,732 p=55740 u=root |  172.17.0.2                 : ok=7    changed=0    unreachable=0    failed=0   
+2018-12-13 17:17:21,732 p=55740 u=root |  172.17.0.3                 : ok=7    changed=0    unreachable=0    failed=0   
+2018-12-13 17:17:21,732 p=55740 u=root |  172.17.0.4                 : ok=8    changed=0    unreachable=0    failed=0   
+2018-12-13 17:17:21,732 p=55740 u=root |  172.17.0.5                 : ok=8    changed=0    unreachable=0    failed=0   
+2018-12-13 17:17:21,732 p=55740 u=root |  172.17.0.6                 : ok=7    changed=0    unreachable=0    failed=0   
+2018-12-13 17:17:21,733 p=55740 u=root |  localhost                  : ok=3    changed=2    unreachable=0    failed=0   
+2018-12-13 18:29:31,165 p=74198 u=root |  PLAY [Creates nginx load balancing configuration] ******************************
+2018-12-13 18:29:31,172 p=74198 u=root |  TASK [Gathering Facts] *********************************************************
+2018-12-13 18:29:31,854 p=74198 u=root |  ok: [localhost]
+2018-12-13 18:29:31,882 p=74198 u=root |  TASK [Create nginx load balancing configuration] *******************************
+2018-12-13 18:29:32,144 p=74198 u=root |  changed: [localhost]
+2018-12-13 18:29:32,147 p=74198 u=root |  PLAY RECAP *********************************************************************
+2018-12-13 18:29:32,147 p=74198 u=root |  localhost                  : ok=2    changed=1    unreachable=0    failed=0   

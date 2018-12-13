@@ -1,0 +1,6 @@
+---
+# tasks file for nginx-load-balancer
+- name: Configure nginx load balancer
+  copy: src=nginx.conf dest=/etc/nginx/nginx.conf backup=yes
+  notify:
+    - Restart nginx web server

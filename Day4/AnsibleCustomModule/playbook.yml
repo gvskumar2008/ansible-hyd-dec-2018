@@ -1,0 +1,14 @@
+- name: Test our custom module
+  hosts: all
+  tasks:
+    - name: Invoke our hello ansible module
+      hello: message='Hello Ansible Custom Module!'
+      register: output
+
+    - debug: msg="{{output}}"
+
+    - name: Invoke our add ansible module
+      add: firstNumber=100.5  secondNumber=200.5
+      register: output
+
+    - debug: msg="{{output}}"
