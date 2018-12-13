@@ -1,0 +1,22 @@
+- name: Install, configure and deploy web page into nginx server
+  hosts: all
+
+  vars_files:
+    - nginx_vars_file
+
+  handlers:
+    - name: Restart the nginx web server
+      shell: service nginx restart
+
+  tasks:
+          - block:
+              - include: "install-{{ansible_distribution}}.yml"
+              - include: "configure-{{ansible_distribution}}.yml"
+            rescue:
+              - debug: msg="Error occured while installing nginx in {{ansible_distribution}}"
+            always:
+              - debug: msg="Successfully installed, configured and deployed web page in ngin {{ansible_distribution}}"
+           
+          - block:
+              - include: common-configure.yml
+              - include: common-deploy.yml

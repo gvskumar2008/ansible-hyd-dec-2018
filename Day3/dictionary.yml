@@ -1,0 +1,35 @@
+- name: Demonstrates use of dictionary variable and how to navigate
+  hosts: localhost
+  vars:
+    greeting_msg: Hello DevOps!
+
+    proxy_configs:
+       http_proxy: http://10.20.30.40:8080
+       https_proxy: https://10.20.30.40:8080
+
+    contacts:
+      Ram:
+        name: Ramakrishnan
+        mobile: 123-456-7890
+
+      Ganesh:
+        name: Ganesan Rajagopalan
+        mobile: 453-234-3422
+
+  tasks:
+    - name: Print the proxy configurations
+      debug: msg="Key is {{item.key}} and Value is {{item.value}}"
+      #debug: var=item.key,item.value
+      with_dict: "{{proxy_configs}}" 
+
+    - debug: var=greeting_msg
+
+    - name: Print all contact details
+      debug: msg="Mobile number of {{item.value.name}} is {{item.value.mobile}}."
+      with_dict: "{{contacts}}"
+
+#  This is how one can install software when the servers are behind
+#  proxy server
+#    - name: Install software when your servers are behind proxy
+#      apt: name=nginx state=latest update_cache=yes
+#      environment: "{{proxy_config}}"

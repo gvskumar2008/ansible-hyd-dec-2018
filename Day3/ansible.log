@@ -1,0 +1,834 @@
+2018-12-12 12:18:58,551 p=25119 u=root |  PLAY [Demonstrates use of dictionary variable and how to navigate] *********************
+2018-12-12 12:18:58,558 p=25119 u=root |  TASK [Gathering Facts] *****************************************************************
+2018-12-12 12:18:59,200 p=25119 u=root |  ok: [localhost]
+2018-12-12 12:18:59,225 p=25119 u=root |  TASK [Print the proxy configurations] **************************************************
+2018-12-12 12:18:59,252 p=25119 u=root |  ok: [localhost] => (item={'value': u'https://10.20.30.40:8080', 'key': u'https_proxy'}) => {
+    "msg": "Key is https_proxy and Value is https://10.20.30.40:8080"
+}
+2018-12-12 12:18:59,256 p=25119 u=root |  ok: [localhost] => (item={'value': u'http://10.20.30.40:8080', 'key': u'http_proxy'}) => {
+    "msg": "Key is http_proxy and Value is http://10.20.30.40:8080"
+}
+2018-12-12 12:18:59,281 p=25119 u=root |  TASK [debug] ***************************************************************************
+2018-12-12 12:18:59,301 p=25119 u=root |  ok: [localhost] => {
+    "greeting_msg": "Hello DevOps!"
+}
+2018-12-12 12:18:59,326 p=25119 u=root |  TASK [Print all contact details] *******************************************************
+2018-12-12 12:18:59,355 p=25119 u=root |  ok: [localhost] => (item={'value': {u'mobile': u'453-234-3422', u'name': u'Ganesan Rajagopalan'}, 'key': u'Ganesh'}) => {
+    "msg": "Mobile number of Ganesan Rajagopalan is 453-234-3422."
+}
+2018-12-12 12:18:59,357 p=25119 u=root |  ok: [localhost] => (item={'value': {u'mobile': u'123-456-7890', u'name': u'Ramakrishnan'}, 'key': u'Ram'}) => {
+    "msg": "Mobile number of Ramakrishnan is 123-456-7890."
+}
+2018-12-12 12:18:59,359 p=25119 u=root |  PLAY RECAP *****************************************************************************
+2018-12-12 12:18:59,359 p=25119 u=root |  localhost                  : ok=4    changed=0    unreachable=0    failed=0   
+2018-12-12 14:53:18,689 p=39558 u=root |  PLAY [Install, configure and deploy web page into nginx server] ****************
+2018-12-12 14:53:18,696 p=39558 u=root |  TASK [Gathering Facts] *********************************************************
+2018-12-12 14:53:19,314 p=39558 u=root |  ok: [ubuntu2]
+2018-12-12 14:53:19,322 p=39558 u=root |  ok: [ubuntu1]
+2018-12-12 14:53:19,324 p=39558 u=root |  ok: [ubuntu3]
+2018-12-12 14:53:19,335 p=39558 u=root |  TASK [Install nginx web server] ************************************************
+2018-12-12 14:53:36,682 p=39558 u=root |  changed: [ubuntu2]
+2018-12-12 14:53:36,692 p=39558 u=root |  changed: [ubuntu3]
+2018-12-12 14:53:36,714 p=39558 u=root |  changed: [ubuntu1]
+2018-12-12 14:53:36,726 p=39558 u=root |  TASK [Create document root folder] *********************************************
+2018-12-12 14:53:37,022 p=39558 u=root |  changed: [ubuntu2]
+2018-12-12 14:53:37,023 p=39558 u=root |  changed: [ubuntu3]
+2018-12-12 14:53:37,024 p=39558 u=root |  changed: [ubuntu1]
+2018-12-12 14:53:37,034 p=39558 u=root |  TASK [Configure nginx document root folder] ************************************
+2018-12-12 14:53:37,119 p=39558 u=root |  An exception occurred during task execution. To see the full traceback, use -vvv. The error was: If you are using a module and expect the file to exist on the remote, see the remote_src option
+2018-12-12 14:53:37,119 p=39558 u=root |  fatal: [ubuntu1]: FAILED! => {"changed": false, "msg": "Could not find or access 'default'\nSearched in:\n\t/root/Training/Day3/files/default\n\t/root/Training/Day3/default\n\t/root/Training/Day3/files/default\n\t/root/Training/Day3/default on the Ansible Controller.\nIf you are using a module and expect the file to exist on the remote, see the remote_src option"}
+2018-12-12 14:53:37,131 p=39558 u=root |  An exception occurred during task execution. To see the full traceback, use -vvv. The error was: If you are using a module and expect the file to exist on the remote, see the remote_src option
+2018-12-12 14:53:37,131 p=39558 u=root |  fatal: [ubuntu2]: FAILED! => {"changed": false, "msg": "Could not find or access 'default'\nSearched in:\n\t/root/Training/Day3/files/default\n\t/root/Training/Day3/default\n\t/root/Training/Day3/files/default\n\t/root/Training/Day3/default on the Ansible Controller.\nIf you are using a module and expect the file to exist on the remote, see the remote_src option"}
+2018-12-12 14:53:37,145 p=39558 u=root |  An exception occurred during task execution. To see the full traceback, use -vvv. The error was: If you are using a module and expect the file to exist on the remote, see the remote_src option
+2018-12-12 14:53:37,145 p=39558 u=root |  fatal: [ubuntu3]: FAILED! => {"changed": false, "msg": "Could not find or access 'default'\nSearched in:\n\t/root/Training/Day3/files/default\n\t/root/Training/Day3/default\n\t/root/Training/Day3/files/default\n\t/root/Training/Day3/default on the Ansible Controller.\nIf you are using a module and expect the file to exist on the remote, see the remote_src option"}
+2018-12-12 14:53:37,148 p=39558 u=root |  	to retry, use: --limit @/root/Training/Day3/install-nginx.retry
+
+2018-12-12 14:53:37,148 p=39558 u=root |  PLAY RECAP *********************************************************************
+2018-12-12 14:53:37,149 p=39558 u=root |  ubuntu1                    : ok=3    changed=2    unreachable=0    failed=1   
+2018-12-12 14:53:37,149 p=39558 u=root |  ubuntu2                    : ok=3    changed=2    unreachable=0    failed=1   
+2018-12-12 14:53:37,149 p=39558 u=root |  ubuntu3                    : ok=3    changed=2    unreachable=0    failed=1   
+2018-12-12 14:54:02,114 p=42590 u=root |  PLAY [Install, configure and deploy web page into nginx server] ****************
+2018-12-12 14:54:02,121 p=42590 u=root |  TASK [Gathering Facts] *********************************************************
+2018-12-12 14:54:02,604 p=42590 u=root |  ok: [ubuntu3]
+2018-12-12 14:54:02,608 p=42590 u=root |  ok: [ubuntu2]
+2018-12-12 14:54:02,609 p=42590 u=root |  ok: [ubuntu1]
+2018-12-12 14:54:02,624 p=42590 u=root |  TASK [Install nginx web server] ************************************************
+2018-12-12 14:54:06,602 p=42590 u=root |  ok: [ubuntu1]
+2018-12-12 14:54:06,642 p=42590 u=root |  ok: [ubuntu3]
+2018-12-12 14:54:06,657 p=42590 u=root |  ok: [ubuntu2]
+2018-12-12 14:54:06,670 p=42590 u=root |  TASK [Create document root folder] *********************************************
+2018-12-12 14:54:07,004 p=42590 u=root |  ok: [ubuntu1]
+2018-12-12 14:54:07,008 p=42590 u=root |  ok: [ubuntu3]
+2018-12-12 14:54:07,011 p=42590 u=root |  ok: [ubuntu2]
+2018-12-12 14:54:07,022 p=42590 u=root |  TASK [Configure nginx document root folder] ************************************
+2018-12-12 14:54:07,616 p=42590 u=root |  changed: [ubuntu2]
+2018-12-12 14:54:07,617 p=42590 u=root |  changed: [ubuntu3]
+2018-12-12 14:54:07,618 p=42590 u=root |  changed: [ubuntu1]
+2018-12-12 14:54:07,629 p=42590 u=root |  TASK [Restart the nginx web server] ********************************************
+2018-12-12 14:54:08,995 p=42590 u=root |   [WARNING]: Consider using the service module rather than running service.  If
+you need to use command because service is insufficient you can add warn=False
+to this command task or set command_warnings=False in ansible.cfg to get rid of
+this message.
+
+2018-12-12 14:54:08,995 p=42590 u=root |  changed: [ubuntu1]
+2018-12-12 14:54:08,997 p=42590 u=root |  changed: [ubuntu3]
+2018-12-12 14:54:08,998 p=42590 u=root |  changed: [ubuntu2]
+2018-12-12 14:54:09,010 p=42590 u=root |  TASK [Deploy customized web page] **********************************************
+2018-12-12 14:54:09,405 p=42590 u=root |  changed: [ubuntu2]
+2018-12-12 14:54:09,425 p=42590 u=root |  changed: [ubuntu1]
+2018-12-12 14:54:09,425 p=42590 u=root |  changed: [ubuntu3]
+2018-12-12 14:54:09,427 p=42590 u=root |  PLAY RECAP *********************************************************************
+2018-12-12 14:54:09,428 p=42590 u=root |  ubuntu1                    : ok=6    changed=3    unreachable=0    failed=0   
+2018-12-12 14:54:09,428 p=42590 u=root |  ubuntu2                    : ok=6    changed=3    unreachable=0    failed=0   
+2018-12-12 14:54:09,428 p=42590 u=root |  ubuntu3                    : ok=6    changed=3    unreachable=0    failed=0   
+2018-12-12 14:54:43,251 p=44231 u=root |  PLAY [Install, configure and deploy web page into nginx server] ****************
+2018-12-12 14:54:43,258 p=44231 u=root |  TASK [Gathering Facts] *********************************************************
+2018-12-12 14:54:43,748 p=44231 u=root |  ok: [ubuntu2]
+2018-12-12 14:54:43,751 p=44231 u=root |  ok: [ubuntu3]
+2018-12-12 14:54:43,753 p=44231 u=root |  ok: [ubuntu1]
+2018-12-12 14:54:43,764 p=44231 u=root |  TASK [Install nginx web server] ************************************************
+2018-12-12 14:54:47,785 p=44231 u=root |  ok: [ubuntu3]
+2018-12-12 14:54:47,912 p=44231 u=root |  ok: [ubuntu2]
+2018-12-12 14:54:47,936 p=44231 u=root |  ok: [ubuntu1]
+2018-12-12 14:54:47,947 p=44231 u=root |  TASK [Create document root folder] *********************************************
+2018-12-12 14:54:48,275 p=44231 u=root |  ok: [ubuntu2]
+2018-12-12 14:54:48,284 p=44231 u=root |  ok: [ubuntu1]
+2018-12-12 14:54:48,284 p=44231 u=root |  ok: [ubuntu3]
+2018-12-12 14:54:48,295 p=44231 u=root |  TASK [Configure nginx document root folder] ************************************
+2018-12-12 14:54:48,725 p=44231 u=root |  ok: [ubuntu3]
+2018-12-12 14:54:48,726 p=44231 u=root |  ok: [ubuntu1]
+2018-12-12 14:54:48,728 p=44231 u=root |  ok: [ubuntu2]
+2018-12-12 14:54:48,738 p=44231 u=root |  TASK [Restart the nginx web server] ********************************************
+2018-12-12 14:54:50,111 p=44231 u=root |   [WARNING]: Consider using the service module rather than running service.  If
+you need to use command because service is insufficient you can add warn=False
+to this command task or set command_warnings=False in ansible.cfg to get rid of
+this message.
+
+2018-12-12 14:54:50,112 p=44231 u=root |  changed: [ubuntu2]
+2018-12-12 14:54:50,113 p=44231 u=root |  changed: [ubuntu3]
+2018-12-12 14:54:50,115 p=44231 u=root |  changed: [ubuntu1]
+2018-12-12 14:54:50,127 p=44231 u=root |  TASK [Deploy customized web page] **********************************************
+2018-12-12 14:54:50,496 p=44231 u=root |  ok: [ubuntu1]
+2018-12-12 14:54:50,507 p=44231 u=root |  ok: [ubuntu2]
+2018-12-12 14:54:50,528 p=44231 u=root |  ok: [ubuntu3]
+2018-12-12 14:54:50,530 p=44231 u=root |  PLAY RECAP *********************************************************************
+2018-12-12 14:54:50,531 p=44231 u=root |  ubuntu1                    : ok=6    changed=1    unreachable=0    failed=0   
+2018-12-12 14:54:50,531 p=44231 u=root |  ubuntu2                    : ok=6    changed=1    unreachable=0    failed=0   
+2018-12-12 14:54:50,531 p=44231 u=root |  ubuntu3                    : ok=6    changed=1    unreachable=0    failed=0   
+2018-12-12 15:06:28,900 p=46554 u=root |   [WARNING]: sftp transfer mechanism failed on [localhost]. Use ANSIBLE_DEBUG=1
+to see detailed information
+
+2018-12-12 15:06:28,906 p=46554 u=root |   [WARNING]: sftp transfer mechanism failed on [localhost]. Use ANSIBLE_DEBUG=1
+to see detailed information
+
+2018-12-12 15:06:28,909 p=46554 u=root |   [WARNING]: sftp transfer mechanism failed on [localhost]. Use ANSIBLE_DEBUG=1
+to see detailed information
+
+2018-12-12 15:06:29,040 p=46554 u=root |  ubuntu2 | SUCCESS => {
+    "changed": false, 
+    "ping": "pong"
+}
+2018-12-12 15:06:29,065 p=46554 u=root |  ubuntu1 | SUCCESS => {
+    "changed": false, 
+    "ping": "pong"
+}
+2018-12-12 15:06:29,112 p=46554 u=root |  centos1 | SUCCESS => {
+    "changed": false, 
+    "ping": "pong"
+}
+2018-12-12 15:06:29,122 p=46554 u=root |  centos3 | SUCCESS => {
+    "changed": false, 
+    "ping": "pong"
+}
+2018-12-12 15:06:29,123 p=46554 u=root |  centos2 | SUCCESS => {
+    "changed": false, 
+    "ping": "pong"
+}
+2018-12-12 15:06:29,328 p=46554 u=root |  ubuntu3 | SUCCESS => {
+    "changed": false, 
+    "ping": "pong"
+}
+2018-12-12 15:12:01,135 p=47170 u=root |  PLAY [Install, configure and deploy web page into nginx server] ****************
+2018-12-12 15:12:01,143 p=47170 u=root |  TASK [Gathering Facts] *********************************************************
+2018-12-12 15:12:01,838 p=47170 u=root |  ok: [ubuntu1]
+2018-12-12 15:12:01,846 p=47170 u=root |  ok: [ubuntu2]
+2018-12-12 15:12:02,239 p=47170 u=root |  ok: [ubuntu3]
+2018-12-12 15:12:05,373 p=47170 u=root |  ok: [centos3]
+2018-12-12 15:12:05,464 p=47170 u=root |  ok: [centos1]
+2018-12-12 15:12:05,471 p=47170 u=root |  ok: [centos2]
+2018-12-12 15:12:05,486 p=47170 u=root |  TASK [Install nginx web server] ************************************************
+2018-12-12 15:12:06,340 p=47170 u=root |  fatal: [centos2]: FAILED! => {"changed": false, "cmd": "apt-get update", "msg": "[Errno 2] No such file or directory", "rc": 2}
+2018-12-12 15:12:06,415 p=47170 u=root |  fatal: [centos3]: FAILED! => {"changed": false, "cmd": "apt-get update", "msg": "[Errno 2] No such file or directory", "rc": 2}
+2018-12-12 15:12:06,488 p=47170 u=root |  fatal: [centos1]: FAILED! => {"changed": false, "cmd": "apt-get update", "msg": "[Errno 2] No such file or directory", "rc": 2}
+2018-12-12 15:12:09,623 p=47170 u=root |  ok: [ubuntu2]
+2018-12-12 15:12:09,657 p=47170 u=root |  ok: [ubuntu1]
+2018-12-12 15:12:10,183 p=47170 u=root |  ok: [ubuntu3]
+2018-12-12 15:12:10,193 p=47170 u=root |  TASK [Create document root folder] *********************************************
+2018-12-12 15:12:10,517 p=47170 u=root |  ok: [ubuntu1]
+2018-12-12 15:12:10,520 p=47170 u=root |  ok: [ubuntu2]
+2018-12-12 15:12:10,526 p=47170 u=root |  ok: [ubuntu3]
+2018-12-12 15:12:10,537 p=47170 u=root |  TASK [Configure nginx document root folder] ************************************
+2018-12-12 15:12:10,973 p=47170 u=root |  ok: [ubuntu3]
+2018-12-12 15:12:10,974 p=47170 u=root |  ok: [ubuntu1]
+2018-12-12 15:12:10,977 p=47170 u=root |  ok: [ubuntu2]
+2018-12-12 15:12:10,988 p=47170 u=root |  TASK [Restart the nginx web server] ********************************************
+2018-12-12 15:12:12,326 p=47170 u=root |   [WARNING]: Consider using the service module rather than running service.  If
+you need to use command because service is insufficient you can add warn=False
+to this command task or set command_warnings=False in ansible.cfg to get rid of
+this message.
+
+2018-12-12 15:12:12,326 p=47170 u=root |  changed: [ubuntu1]
+2018-12-12 15:12:12,327 p=47170 u=root |  changed: [ubuntu2]
+2018-12-12 15:12:12,329 p=47170 u=root |  changed: [ubuntu3]
+2018-12-12 15:12:12,341 p=47170 u=root |  TASK [Deploy customized web page] **********************************************
+2018-12-12 15:12:12,683 p=47170 u=root |  ok: [ubuntu1]
+2018-12-12 15:12:12,725 p=47170 u=root |  ok: [ubuntu2]
+2018-12-12 15:12:12,741 p=47170 u=root |  ok: [ubuntu3]
+2018-12-12 15:12:12,744 p=47170 u=root |  	to retry, use: --limit @/root/Training/Day3/install-nginx.retry
+
+2018-12-12 15:12:12,744 p=47170 u=root |  PLAY RECAP *********************************************************************
+2018-12-12 15:12:12,744 p=47170 u=root |  centos1                    : ok=1    changed=0    unreachable=0    failed=1   
+2018-12-12 15:12:12,744 p=47170 u=root |  centos2                    : ok=1    changed=0    unreachable=0    failed=1   
+2018-12-12 15:12:12,745 p=47170 u=root |  centos3                    : ok=1    changed=0    unreachable=0    failed=1   
+2018-12-12 15:12:12,745 p=47170 u=root |  ubuntu1                    : ok=6    changed=1    unreachable=0    failed=0   
+2018-12-12 15:12:12,745 p=47170 u=root |  ubuntu2                    : ok=6    changed=1    unreachable=0    failed=0   
+2018-12-12 15:12:12,745 p=47170 u=root |  ubuntu3                    : ok=6    changed=1    unreachable=0    failed=0   
+2018-12-12 15:24:05,054 p=49249 u=root |  PLAY [Install, configure and deploy web page into nginx server] *************************
+2018-12-12 15:24:05,060 p=49249 u=root |  TASK [Gathering Facts] ******************************************************************
+2018-12-12 15:24:05,728 p=49249 u=root |  ok: [ubuntu1]
+2018-12-12 15:24:05,811 p=49249 u=root |  ok: [ubuntu2]
+2018-12-12 15:24:06,127 p=49249 u=root |  ok: [ubuntu3]
+2018-12-12 15:24:09,327 p=49249 u=root |  ok: [centos2]
+2018-12-12 15:24:09,418 p=49249 u=root |  ok: [centos1]
+2018-12-12 15:24:09,435 p=49249 u=root |  ok: [centos3]
+2018-12-12 15:24:09,448 p=49249 u=root |  TASK [Install nginx web server in Ubuntu] ***********************************************
+2018-12-12 15:24:09,468 p=49249 u=root |  skipping: [centos1]
+2018-12-12 15:24:09,486 p=49249 u=root |  skipping: [centos2]
+2018-12-12 15:24:09,500 p=49249 u=root |  skipping: [centos3]
+2018-12-12 15:24:13,835 p=49249 u=root |  ok: [ubuntu3]
+2018-12-12 15:24:13,844 p=49249 u=root |  ok: [ubuntu1]
+2018-12-12 15:24:13,871 p=49249 u=root |  ok: [ubuntu2]
+2018-12-12 15:24:13,892 p=49249 u=root |  TASK [Install Extra Package for Enterprise Linux in CentOS] *****************************
+2018-12-12 15:24:13,980 p=49249 u=root |  skipping: [ubuntu1]
+2018-12-12 15:24:14,008 p=49249 u=root |  skipping: [ubuntu2]
+2018-12-12 15:24:14,015 p=49249 u=root |  skipping: [ubuntu3]
+2018-12-12 15:24:19,865 p=49249 u=root |  changed: [centos1]
+2018-12-12 15:24:19,917 p=49249 u=root |  changed: [centos3]
+2018-12-12 15:24:20,870 p=49249 u=root |  changed: [centos2]
+2018-12-12 15:24:20,884 p=49249 u=root |  TASK [Install nginx web server in CentOS] ***********************************************
+2018-12-12 15:24:21,020 p=49249 u=root |  skipping: [ubuntu1]
+2018-12-12 15:24:21,022 p=49249 u=root |  skipping: [ubuntu2]
+2018-12-12 15:24:21,034 p=49249 u=root |  skipping: [ubuntu3]
+2018-12-12 15:24:57,430 p=49249 u=root |  changed: [centos1]
+2018-12-12 15:25:00,322 p=49249 u=root |  changed: [centos2]
+2018-12-12 15:25:01,344 p=49249 u=root |  changed: [centos3]
+2018-12-12 15:25:01,357 p=49249 u=root |  TASK [Create document root folder] ******************************************************
+2018-12-12 15:25:01,785 p=49249 u=root |  ok: [ubuntu1]
+2018-12-12 15:25:01,794 p=49249 u=root |  changed: [centos2]
+2018-12-12 15:25:01,801 p=49249 u=root |  changed: [centos3]
+2018-12-12 15:25:01,801 p=49249 u=root |  ok: [ubuntu2]
+2018-12-12 15:25:01,839 p=49249 u=root |  changed: [centos1]
+2018-12-12 15:25:01,988 p=49249 u=root |  ok: [ubuntu3]
+2018-12-12 15:25:02,000 p=49249 u=root |  TASK [Configure nginx document root folder in Ubuntu] ***********************************
+2018-12-12 15:25:02,020 p=49249 u=root |  skipping: [centos1]
+2018-12-12 15:25:02,039 p=49249 u=root |  skipping: [centos2]
+2018-12-12 15:25:02,055 p=49249 u=root |  skipping: [centos3]
+2018-12-12 15:25:02,498 p=49249 u=root |  ok: [ubuntu3]
+2018-12-12 15:25:02,501 p=49249 u=root |  ok: [ubuntu1]
+2018-12-12 15:25:02,509 p=49249 u=root |  ok: [ubuntu2]
+2018-12-12 15:25:02,523 p=49249 u=root |  TASK [Restart the nginx web server] *****************************************************
+2018-12-12 15:25:03,229 p=49249 u=root |   [WARNING]: Consider using the service module rather than running service.  If you need
+to use command because service is insufficient you can add warn=False to this command
+task or set command_warnings=False in ansible.cfg to get rid of this message.
+
+2018-12-12 15:25:03,229 p=49249 u=root |  changed: [centos3]
+2018-12-12 15:25:03,250 p=49249 u=root |  changed: [centos2]
+2018-12-12 15:25:03,276 p=49249 u=root |  changed: [centos1]
+2018-12-12 15:25:04,056 p=49249 u=root |  changed: [ubuntu2]
+2018-12-12 15:25:04,102 p=49249 u=root |  changed: [ubuntu1]
+2018-12-12 15:25:04,469 p=49249 u=root |  changed: [ubuntu3]
+2018-12-12 15:25:04,484 p=49249 u=root |  TASK [Deploy customized web page] *******************************************************
+2018-12-12 15:25:05,001 p=49249 u=root |  ok: [ubuntu1]
+2018-12-12 15:25:05,100 p=49249 u=root |  ok: [ubuntu2]
+2018-12-12 15:25:05,419 p=49249 u=root |  ok: [ubuntu3]
+2018-12-12 15:25:05,713 p=49249 u=root |  changed: [centos1]
+2018-12-12 15:25:05,717 p=49249 u=root |  changed: [centos2]
+2018-12-12 15:25:05,731 p=49249 u=root |  changed: [centos3]
+2018-12-12 15:25:05,734 p=49249 u=root |  PLAY RECAP ******************************************************************************
+2018-12-12 15:25:05,734 p=49249 u=root |  centos1                    : ok=6    changed=5    unreachable=0    failed=0   
+2018-12-12 15:25:05,734 p=49249 u=root |  centos2                    : ok=6    changed=5    unreachable=0    failed=0   
+2018-12-12 15:25:05,735 p=49249 u=root |  centos3                    : ok=6    changed=5    unreachable=0    failed=0   
+2018-12-12 15:25:05,735 p=49249 u=root |  ubuntu1                    : ok=6    changed=1    unreachable=0    failed=0   
+2018-12-12 15:25:05,735 p=49249 u=root |  ubuntu2                    : ok=6    changed=1    unreachable=0    failed=0   
+2018-12-12 15:25:05,735 p=49249 u=root |  ubuntu3                    : ok=6    changed=1    unreachable=0    failed=0   
+2018-12-12 16:58:13,323 p=56720 u=root |  PLAY [Install, configure and deploy web page into nginx server] *************************
+2018-12-12 16:58:13,330 p=56720 u=root |  TASK [Gathering Facts] ******************************************************************
+2018-12-12 16:58:14,038 p=56720 u=root |  ok: [ubuntu1]
+2018-12-12 16:58:14,055 p=56720 u=root |  ok: [ubuntu2]
+2018-12-12 16:58:14,455 p=56720 u=root |  ok: [ubuntu3]
+2018-12-12 16:58:17,671 p=56720 u=root |  ok: [centos1]
+2018-12-12 16:58:17,783 p=56720 u=root |  ok: [centos2]
+2018-12-12 16:58:17,812 p=56720 u=root |  ok: [centos3]
+2018-12-12 16:58:17,826 p=56720 u=root |  TASK [Install nginx web server in Ubuntu] ***********************************************
+2018-12-12 16:58:17,846 p=56720 u=root |  skipping: [centos1]
+2018-12-12 16:58:17,865 p=56720 u=root |  skipping: [centos2]
+2018-12-12 16:58:17,881 p=56720 u=root |  skipping: [centos3]
+2018-12-12 16:58:22,560 p=56720 u=root |  ok: [ubuntu3]
+2018-12-12 16:58:22,569 p=56720 u=root |  ok: [ubuntu1]
+2018-12-12 16:58:22,584 p=56720 u=root |  ok: [ubuntu2]
+2018-12-12 16:58:22,599 p=56720 u=root |  TASK [Install Extra Package for Enterprise Linux in CentOS] *****************************
+2018-12-12 16:58:22,687 p=56720 u=root |  skipping: [ubuntu1]
+2018-12-12 16:58:22,707 p=56720 u=root |  skipping: [ubuntu2]
+2018-12-12 16:58:22,718 p=56720 u=root |  skipping: [ubuntu3]
+2018-12-12 16:58:30,174 p=56720 u=root |  ok: [centos2]
+2018-12-12 16:58:30,175 p=56720 u=root |  ok: [centos1]
+2018-12-12 16:58:31,220 p=56720 u=root |  ok: [centos3]
+2018-12-12 16:58:31,234 p=56720 u=root |  TASK [Install nginx web server in CentOS] ***********************************************
+2018-12-12 16:58:31,331 p=56720 u=root |  skipping: [ubuntu1]
+2018-12-12 16:58:31,342 p=56720 u=root |  skipping: [ubuntu2]
+2018-12-12 16:58:31,344 p=56720 u=root |  skipping: [ubuntu3]
+2018-12-12 16:58:38,418 p=56720 u=root |  ok: [centos2]
+2018-12-12 16:58:38,441 p=56720 u=root |  ok: [centos1]
+2018-12-12 16:58:38,506 p=56720 u=root |  ok: [centos3]
+2018-12-12 16:58:38,521 p=56720 u=root |  TASK [Create document root folder] ******************************************************
+2018-12-12 16:58:38,988 p=56720 u=root |  ok: [ubuntu2]
+2018-12-12 16:58:38,990 p=56720 u=root |  ok: [centos3]
+2018-12-12 16:58:39,007 p=56720 u=root |  ok: [centos1]
+2018-12-12 16:58:39,013 p=56720 u=root |  ok: [ubuntu1]
+2018-12-12 16:58:39,052 p=56720 u=root |  ok: [centos2]
+2018-12-12 16:58:39,199 p=56720 u=root |  ok: [ubuntu3]
+2018-12-12 16:58:39,211 p=56720 u=root |  TASK [Configure nginx document root folder in Ubuntu] ***********************************
+2018-12-12 16:58:39,234 p=56720 u=root |  skipping: [centos1]
+2018-12-12 16:58:39,254 p=56720 u=root |  skipping: [centos2]
+2018-12-12 16:58:39,273 p=56720 u=root |  skipping: [centos3]
+2018-12-12 16:58:39,722 p=56720 u=root |  ok: [ubuntu1]
+2018-12-12 16:58:39,722 p=56720 u=root |  ok: [ubuntu3]
+2018-12-12 16:58:39,724 p=56720 u=root |  ok: [ubuntu2]
+2018-12-12 16:58:39,738 p=56720 u=root |  TASK [Configure nginx document root folder in CentOS] ***********************************
+2018-12-12 16:58:39,827 p=56720 u=root |  skipping: [ubuntu1]
+2018-12-12 16:58:39,851 p=56720 u=root |  skipping: [ubuntu2]
+2018-12-12 16:58:39,872 p=56720 u=root |  skipping: [ubuntu3]
+2018-12-12 16:58:40,740 p=56720 u=root |  changed: [centos1]
+2018-12-12 16:58:40,853 p=56720 u=root |  changed: [centos3]
+2018-12-12 16:58:40,855 p=56720 u=root |  changed: [centos2]
+2018-12-12 16:58:40,867 p=56720 u=root |  TASK [Restart the nginx web server] *****************************************************
+2018-12-12 16:58:41,643 p=56720 u=root |   [WARNING]: Consider using the service module rather than running service.  If you need
+to use command because service is insufficient you can add warn=False to this command
+task or set command_warnings=False in ansible.cfg to get rid of this message.
+
+2018-12-12 16:58:41,643 p=56720 u=root |  changed: [centos1]
+2018-12-12 16:58:41,671 p=56720 u=root |  changed: [centos2]
+2018-12-12 16:58:41,688 p=56720 u=root |  changed: [centos3]
+2018-12-12 16:58:42,331 p=56720 u=root |  changed: [ubuntu2]
+2018-12-12 16:58:42,360 p=56720 u=root |  changed: [ubuntu1]
+2018-12-12 16:58:42,895 p=56720 u=root |  changed: [ubuntu3]
+2018-12-12 16:58:42,910 p=56720 u=root |  TASK [Deploy customized web page] *******************************************************
+2018-12-12 16:58:43,451 p=56720 u=root |  ok: [ubuntu1]
+2018-12-12 16:58:43,453 p=56720 u=root |  ok: [centos1]
+2018-12-12 16:58:43,466 p=56720 u=root |  ok: [ubuntu2]
+2018-12-12 16:58:43,469 p=56720 u=root |  ok: [centos2]
+2018-12-12 16:58:43,502 p=56720 u=root |  ok: [centos3]
+2018-12-12 16:58:43,762 p=56720 u=root |  ok: [ubuntu3]
+2018-12-12 16:58:43,764 p=56720 u=root |  PLAY RECAP ******************************************************************************
+2018-12-12 16:58:43,765 p=56720 u=root |  centos1                    : ok=7    changed=2    unreachable=0    failed=0   
+2018-12-12 16:58:43,765 p=56720 u=root |  centos2                    : ok=7    changed=2    unreachable=0    failed=0   
+2018-12-12 16:58:43,765 p=56720 u=root |  centos3                    : ok=7    changed=2    unreachable=0    failed=0   
+2018-12-12 16:58:43,765 p=56720 u=root |  ubuntu1                    : ok=6    changed=1    unreachable=0    failed=0   
+2018-12-12 16:58:43,765 p=56720 u=root |  ubuntu2                    : ok=6    changed=1    unreachable=0    failed=0   
+2018-12-12 16:58:43,765 p=56720 u=root |  ubuntu3                    : ok=6    changed=1    unreachable=0    failed=0   
+2018-12-12 17:13:35,786 p=60163 u=root |  PLAY [Install, configure and deploy web page into nginx server] *************************
+2018-12-12 17:13:35,793 p=60163 u=root |  TASK [Gathering Facts] ******************************************************************
+2018-12-12 17:13:36,463 p=60163 u=root |  ok: [ubuntu2]
+2018-12-12 17:13:36,502 p=60163 u=root |  ok: [ubuntu1]
+2018-12-12 17:13:36,866 p=60163 u=root |  ok: [ubuntu3]
+2018-12-12 17:13:40,218 p=60163 u=root |  ok: [centos1]
+2018-12-12 17:13:40,248 p=60163 u=root |  ok: [centos2]
+2018-12-12 17:13:40,262 p=60163 u=root |  ok: [centos3]
+2018-12-12 17:13:40,276 p=60163 u=root |  TASK [Install nginx web server in Ubuntu] ***********************************************
+2018-12-12 17:13:40,296 p=60163 u=root |  skipping: [centos1]
+2018-12-12 17:13:40,313 p=60163 u=root |  skipping: [centos2]
+2018-12-12 17:13:40,328 p=60163 u=root |  skipping: [centos3]
+2018-12-12 17:13:45,441 p=60163 u=root |  ok: [ubuntu1]
+2018-12-12 17:13:45,547 p=60163 u=root |  ok: [ubuntu2]
+2018-12-12 17:13:45,640 p=60163 u=root |  ok: [ubuntu3]
+2018-12-12 17:13:45,655 p=60163 u=root |  TASK [Install Extra Package for Enterprise Linux in CentOS] *****************************
+2018-12-12 17:13:45,774 p=60163 u=root |  skipping: [ubuntu2]
+2018-12-12 17:13:45,776 p=60163 u=root |  skipping: [ubuntu1]
+2018-12-12 17:13:45,792 p=60163 u=root |  skipping: [ubuntu3]
+2018-12-12 17:13:53,291 p=60163 u=root |  ok: [centos3]
+2018-12-12 17:13:54,336 p=60163 u=root |  ok: [centos2]
+2018-12-12 17:13:54,338 p=60163 u=root |  ok: [centos1]
+2018-12-12 17:13:54,355 p=60163 u=root |  TASK [Install nginx web server in CentOS] ***********************************************
+2018-12-12 17:13:54,440 p=60163 u=root |  skipping: [ubuntu1]
+2018-12-12 17:13:54,470 p=60163 u=root |  skipping: [ubuntu2]
+2018-12-12 17:13:54,489 p=60163 u=root |  skipping: [ubuntu3]
+2018-12-12 17:14:01,643 p=60163 u=root |  ok: [centos2]
+2018-12-12 17:14:01,659 p=60163 u=root |  ok: [centos3]
+2018-12-12 17:14:01,760 p=60163 u=root |  ok: [centos1]
+2018-12-12 17:14:01,774 p=60163 u=root |  TASK [Create document root folder] ******************************************************
+2018-12-12 17:14:02,206 p=60163 u=root |  ok: [ubuntu1]
+2018-12-12 17:14:02,209 p=60163 u=root |  ok: [centos3]
+2018-12-12 17:14:02,232 p=60163 u=root |  ok: [ubuntu2]
+2018-12-12 17:14:02,250 p=60163 u=root |  ok: [centos2]
+2018-12-12 17:14:02,269 p=60163 u=root |  ok: [centos1]
+2018-12-12 17:14:02,415 p=60163 u=root |  ok: [ubuntu3]
+2018-12-12 17:14:02,429 p=60163 u=root |  TASK [Configure nginx document root folder in Ubuntu] ***********************************
+2018-12-12 17:14:02,452 p=60163 u=root |  skipping: [centos1]
+2018-12-12 17:14:02,479 p=60163 u=root |  skipping: [centos2]
+2018-12-12 17:14:02,500 p=60163 u=root |  skipping: [centos3]
+2018-12-12 17:14:02,988 p=60163 u=root |  ok: [ubuntu2]
+2018-12-12 17:14:02,992 p=60163 u=root |  ok: [ubuntu1]
+2018-12-12 17:14:03,005 p=60163 u=root |  ok: [ubuntu3]
+2018-12-12 17:14:03,022 p=60163 u=root |  TASK [Configure nginx document root folder in CentOS] ***********************************
+2018-12-12 17:14:03,144 p=60163 u=root |  skipping: [ubuntu1]
+2018-12-12 17:14:03,145 p=60163 u=root |  skipping: [ubuntu2]
+2018-12-12 17:14:03,160 p=60163 u=root |  skipping: [ubuntu3]
+2018-12-12 17:14:03,497 p=60163 u=root |  ok: [centos1]
+2018-12-12 17:14:03,506 p=60163 u=root |  ok: [centos2]
+2018-12-12 17:14:03,515 p=60163 u=root |  ok: [centos3]
+2018-12-12 17:14:03,530 p=60163 u=root |  TASK [Restart the nginx web server] *****************************************************
+2018-12-12 17:14:04,403 p=60163 u=root |   [WARNING]: Consider using the service module rather than running service.  If you need
+to use command because service is insufficient you can add warn=False to this command
+task or set command_warnings=False in ansible.cfg to get rid of this message.
+
+2018-12-12 17:14:04,403 p=60163 u=root |  changed: [centos3]
+2018-12-12 17:14:04,424 p=60163 u=root |  changed: [centos2]
+2018-12-12 17:14:04,438 p=60163 u=root |  changed: [centos1]
+2018-12-12 17:14:05,071 p=60163 u=root |  changed: [ubuntu2]
+2018-12-12 17:14:05,075 p=60163 u=root |  changed: [ubuntu1]
+2018-12-12 17:14:05,663 p=60163 u=root |  changed: [ubuntu3]
+2018-12-12 17:14:05,679 p=60163 u=root |  TASK [Deploy customized web page] *******************************************************
+2018-12-12 17:14:06,231 p=60163 u=root |  ok: [centos1]
+2018-12-12 17:14:06,269 p=60163 u=root |  ok: [centos3]
+2018-12-12 17:14:06,289 p=60163 u=root |  ok: [centos2]
+2018-12-12 17:14:06,328 p=60163 u=root |  ok: [ubuntu1]
+2018-12-12 17:14:06,385 p=60163 u=root |  ok: [ubuntu2]
+2018-12-12 17:14:06,579 p=60163 u=root |  ok: [ubuntu3]
+2018-12-12 17:14:06,582 p=60163 u=root |  PLAY RECAP ******************************************************************************
+2018-12-12 17:14:06,582 p=60163 u=root |  centos1                    : ok=7    changed=1    unreachable=0    failed=0   
+2018-12-12 17:14:06,582 p=60163 u=root |  centos2                    : ok=7    changed=1    unreachable=0    failed=0   
+2018-12-12 17:14:06,582 p=60163 u=root |  centos3                    : ok=7    changed=1    unreachable=0    failed=0   
+2018-12-12 17:14:06,582 p=60163 u=root |  ubuntu1                    : ok=6    changed=1    unreachable=0    failed=0   
+2018-12-12 17:14:06,583 p=60163 u=root |  ubuntu2                    : ok=6    changed=1    unreachable=0    failed=0   
+2018-12-12 17:14:06,583 p=60163 u=root |  ubuntu3                    : ok=6    changed=1    unreachable=0    failed=0   
+2018-12-12 17:23:57,545 p=62872 u=root |  PLAY [Install, configure and deploy web page into nginx server] *************************
+2018-12-12 17:23:57,553 p=62872 u=root |  TASK [Gathering Facts] ******************************************************************
+2018-12-12 17:23:58,240 p=62872 u=root |  ok: [ubuntu2]
+2018-12-12 17:23:58,342 p=62872 u=root |  ok: [ubuntu1]
+2018-12-12 17:23:58,715 p=62872 u=root |  ok: [ubuntu3]
+2018-12-12 17:24:01,808 p=62872 u=root |  ok: [centos3]
+2018-12-12 17:24:01,859 p=62872 u=root |  ok: [centos2]
+2018-12-12 17:24:01,947 p=62872 u=root |  ok: [centos1]
+2018-12-12 17:24:01,959 p=62872 u=root |  TASK [Install nginx web server in Ubuntu] ***********************************************
+2018-12-12 17:24:01,979 p=62872 u=root |  skipping: [centos1]
+2018-12-12 17:24:01,998 p=62872 u=root |  skipping: [centos2]
+2018-12-12 17:24:02,032 p=62872 u=root |  skipping: [centos3]
+2018-12-12 17:24:06,621 p=62872 u=root |  ok: [ubuntu1]
+2018-12-12 17:24:06,623 p=62872 u=root |  ok: [ubuntu3]
+2018-12-12 17:24:06,687 p=62872 u=root |  ok: [ubuntu2]
+2018-12-12 17:24:06,703 p=62872 u=root |  TASK [Install Extra Package for Enterprise Linux in CentOS] *****************************
+2018-12-12 17:24:06,808 p=62872 u=root |  skipping: [ubuntu1]
+2018-12-12 17:24:06,810 p=62872 u=root |  skipping: [ubuntu2]
+2018-12-12 17:24:06,820 p=62872 u=root |  skipping: [ubuntu3]
+2018-12-12 17:24:13,959 p=62872 u=root |  ok: [centos2]
+2018-12-12 17:24:14,073 p=62872 u=root |  ok: [centos1]
+2018-12-12 17:24:15,009 p=62872 u=root |  ok: [centos3]
+2018-12-12 17:24:15,022 p=62872 u=root |  TASK [Install nginx web server in CentOS] ***********************************************
+2018-12-12 17:24:15,123 p=62872 u=root |  skipping: [ubuntu1]
+2018-12-12 17:24:15,126 p=62872 u=root |  skipping: [ubuntu2]
+2018-12-12 17:24:15,138 p=62872 u=root |  skipping: [ubuntu3]
+2018-12-12 17:24:22,274 p=62872 u=root |  ok: [centos1]
+2018-12-12 17:24:22,286 p=62872 u=root |  ok: [centos2]
+2018-12-12 17:24:22,352 p=62872 u=root |  ok: [centos3]
+2018-12-12 17:24:22,366 p=62872 u=root |  TASK [Create document root folder] ******************************************************
+2018-12-12 17:24:22,818 p=62872 u=root |  ok: [ubuntu2]
+2018-12-12 17:24:22,820 p=62872 u=root |  ok: [ubuntu1]
+2018-12-12 17:24:22,836 p=62872 u=root |  ok: [centos1]
+2018-12-12 17:24:22,855 p=62872 u=root |  ok: [centos2]
+2018-12-12 17:24:22,873 p=62872 u=root |  ok: [centos3]
+2018-12-12 17:24:23,029 p=62872 u=root |  ok: [ubuntu3]
+2018-12-12 17:24:23,042 p=62872 u=root |  TASK [Configure nginx document root folder in Ubuntu] ***********************************
+2018-12-12 17:24:23,065 p=62872 u=root |  skipping: [centos1]
+2018-12-12 17:24:23,084 p=62872 u=root |  skipping: [centos2]
+2018-12-12 17:24:23,102 p=62872 u=root |  skipping: [centos3]
+2018-12-12 17:24:23,623 p=62872 u=root |  ok: [ubuntu1]
+2018-12-12 17:24:23,625 p=62872 u=root |  ok: [ubuntu3]
+2018-12-12 17:24:23,638 p=62872 u=root |  ok: [ubuntu2]
+2018-12-12 17:24:23,652 p=62872 u=root |  TASK [Configure nginx document root folder in CentOS] ***********************************
+2018-12-12 17:24:23,764 p=62872 u=root |  skipping: [ubuntu1]
+2018-12-12 17:24:23,765 p=62872 u=root |  skipping: [ubuntu2]
+2018-12-12 17:24:23,784 p=62872 u=root |  skipping: [ubuntu3]
+2018-12-12 17:24:24,076 p=62872 u=root |  ok: [centos2]
+2018-12-12 17:24:24,078 p=62872 u=root |  ok: [centos1]
+2018-12-12 17:24:24,078 p=62872 u=root |  ok: [centos3]
+2018-12-12 17:24:24,092 p=62872 u=root |  TASK [Deploy customized web page] *******************************************************
+2018-12-12 17:24:24,645 p=62872 u=root |  ok: [ubuntu2]
+2018-12-12 17:24:24,656 p=62872 u=root |  ok: [centos1]
+2018-12-12 17:24:24,664 p=62872 u=root |  ok: [ubuntu1]
+2018-12-12 17:24:24,699 p=62872 u=root |  ok: [centos2]
+2018-12-12 17:24:24,700 p=62872 u=root |  ok: [centos3]
+2018-12-12 17:24:24,953 p=62872 u=root |  ok: [ubuntu3]
+2018-12-12 17:24:24,955 p=62872 u=root |  PLAY RECAP ******************************************************************************
+2018-12-12 17:24:24,955 p=62872 u=root |  centos1                    : ok=6    changed=0    unreachable=0    failed=0   
+2018-12-12 17:24:24,955 p=62872 u=root |  centos2                    : ok=6    changed=0    unreachable=0    failed=0   
+2018-12-12 17:24:24,956 p=62872 u=root |  centos3                    : ok=6    changed=0    unreachable=0    failed=0   
+2018-12-12 17:24:24,956 p=62872 u=root |  ubuntu1                    : ok=5    changed=0    unreachable=0    failed=0   
+2018-12-12 17:24:24,956 p=62872 u=root |  ubuntu2                    : ok=5    changed=0    unreachable=0    failed=0   
+2018-12-12 17:24:24,956 p=62872 u=root |  ubuntu3                    : ok=5    changed=0    unreachable=0    failed=0   
+2018-12-12 17:24:59,667 p=64991 u=root |  PLAY [Install, configure and deploy web page into nginx server] *************************
+2018-12-12 17:24:59,675 p=64991 u=root |  TASK [Gathering Facts] ******************************************************************
+2018-12-12 17:25:00,282 p=64991 u=root |  ok: [ubuntu1]
+2018-12-12 17:25:00,285 p=64991 u=root |  ok: [ubuntu2]
+2018-12-12 17:25:00,626 p=64991 u=root |  ok: [ubuntu3]
+2018-12-12 17:25:03,732 p=64991 u=root |  ok: [centos1]
+2018-12-12 17:25:03,879 p=64991 u=root |  ok: [centos2]
+2018-12-12 17:25:03,889 p=64991 u=root |  ok: [centos3]
+2018-12-12 17:25:03,903 p=64991 u=root |  TASK [Install nginx web server in Ubuntu] ***********************************************
+2018-12-12 17:25:03,924 p=64991 u=root |  skipping: [centos1]
+2018-12-12 17:25:03,950 p=64991 u=root |  skipping: [centos2]
+2018-12-12 17:25:03,966 p=64991 u=root |  skipping: [centos3]
+2018-12-12 17:25:08,571 p=64991 u=root |  ok: [ubuntu1]
+2018-12-12 17:25:08,599 p=64991 u=root |  ok: [ubuntu2]
+2018-12-12 17:25:08,633 p=64991 u=root |  ok: [ubuntu3]
+2018-12-12 17:25:08,649 p=64991 u=root |  TASK [Install Extra Package for Enterprise Linux in CentOS] *****************************
+2018-12-12 17:25:08,754 p=64991 u=root |  skipping: [ubuntu1]
+2018-12-12 17:25:08,755 p=64991 u=root |  skipping: [ubuntu2]
+2018-12-12 17:25:08,768 p=64991 u=root |  skipping: [ubuntu3]
+2018-12-12 17:25:15,925 p=64991 u=root |  ok: [centos2]
+2018-12-12 17:25:15,955 p=64991 u=root |  ok: [centos1]
+2018-12-12 17:25:16,234 p=64991 u=root |  ok: [centos3]
+2018-12-12 17:25:16,247 p=64991 u=root |  TASK [Install nginx web server in CentOS] ***********************************************
+2018-12-12 17:25:16,327 p=64991 u=root |  skipping: [ubuntu1]
+2018-12-12 17:25:16,350 p=64991 u=root |  skipping: [ubuntu2]
+2018-12-12 17:25:16,367 p=64991 u=root |  skipping: [ubuntu3]
+2018-12-12 17:25:23,563 p=64991 u=root |  ok: [centos3]
+2018-12-12 17:25:23,564 p=64991 u=root |  ok: [centos1]
+2018-12-12 17:25:23,568 p=64991 u=root |  ok: [centos2]
+2018-12-12 17:25:23,584 p=64991 u=root |  TASK [Create document root folder] ******************************************************
+2018-12-12 17:25:24,030 p=64991 u=root |  ok: [centos2]
+2018-12-12 17:25:24,031 p=64991 u=root |  ok: [ubuntu2]
+2018-12-12 17:25:24,033 p=64991 u=root |  ok: [ubuntu1]
+2018-12-12 17:25:24,070 p=64991 u=root |  ok: [centos3]
+2018-12-12 17:25:24,110 p=64991 u=root |  ok: [centos1]
+2018-12-12 17:25:24,249 p=64991 u=root |  ok: [ubuntu3]
+2018-12-12 17:25:24,262 p=64991 u=root |  TASK [Configure nginx document root folder in Ubuntu] ***********************************
+2018-12-12 17:25:24,283 p=64991 u=root |  skipping: [centos1]
+2018-12-12 17:25:24,306 p=64991 u=root |  skipping: [centos2]
+2018-12-12 17:25:24,322 p=64991 u=root |  skipping: [centos3]
+2018-12-12 17:25:24,927 p=64991 u=root |  changed: [ubuntu1]
+2018-12-12 17:25:24,931 p=64991 u=root |  changed: [ubuntu2]
+2018-12-12 17:25:24,933 p=64991 u=root |  changed: [ubuntu3]
+2018-12-12 17:25:24,946 p=64991 u=root |  TASK [Configure nginx document root folder in CentOS] ***********************************
+2018-12-12 17:25:25,054 p=64991 u=root |  skipping: [ubuntu1]
+2018-12-12 17:25:25,056 p=64991 u=root |  skipping: [ubuntu2]
+2018-12-12 17:25:25,071 p=64991 u=root |  skipping: [ubuntu3]
+2018-12-12 17:25:25,835 p=64991 u=root |  changed: [centos1]
+2018-12-12 17:25:25,848 p=64991 u=root |  changed: [centos2]
+2018-12-12 17:25:25,851 p=64991 u=root |  changed: [centos3]
+2018-12-12 17:25:25,868 p=64991 u=root |  TASK [Deploy customized web page] *******************************************************
+2018-12-12 17:25:26,421 p=64991 u=root |  ok: [centos1]
+2018-12-12 17:25:26,457 p=64991 u=root |  ok: [ubuntu2]
+2018-12-12 17:25:26,468 p=64991 u=root |  ok: [centos2]
+2018-12-12 17:25:26,469 p=64991 u=root |  ok: [ubuntu1]
+2018-12-12 17:25:26,485 p=64991 u=root |  ok: [centos3]
+2018-12-12 17:25:26,737 p=64991 u=root |  ok: [ubuntu3]
+2018-12-12 17:25:26,739 p=64991 u=root |  RUNNING HANDLER [Restart the nginx web server] ******************************************
+2018-12-12 17:25:27,568 p=64991 u=root |   [WARNING]: Consider using the service module rather than running service.  If you need
+to use command because service is insufficient you can add warn=False to this command
+task or set command_warnings=False in ansible.cfg to get rid of this message.
+
+2018-12-12 17:25:27,569 p=64991 u=root |  changed: [centos1]
+2018-12-12 17:25:27,569 p=64991 u=root |  changed: [centos2]
+2018-12-12 17:25:28,146 p=64991 u=root |  changed: [centos3]
+2018-12-12 17:25:28,219 p=64991 u=root |  changed: [ubuntu2]
+2018-12-12 17:25:28,223 p=64991 u=root |  changed: [ubuntu3]
+2018-12-12 17:25:28,229 p=64991 u=root |  changed: [ubuntu1]
+2018-12-12 17:25:28,231 p=64991 u=root |  PLAY RECAP ******************************************************************************
+2018-12-12 17:25:28,232 p=64991 u=root |  centos1                    : ok=7    changed=2    unreachable=0    failed=0   
+2018-12-12 17:25:28,232 p=64991 u=root |  centos2                    : ok=7    changed=2    unreachable=0    failed=0   
+2018-12-12 17:25:28,232 p=64991 u=root |  centos3                    : ok=7    changed=2    unreachable=0    failed=0   
+2018-12-12 17:25:28,232 p=64991 u=root |  ubuntu1                    : ok=6    changed=2    unreachable=0    failed=0   
+2018-12-12 17:25:28,232 p=64991 u=root |  ubuntu2                    : ok=6    changed=2    unreachable=0    failed=0   
+2018-12-12 17:25:28,232 p=64991 u=root |  ubuntu3                    : ok=6    changed=2    unreachable=0    failed=0   
+2018-12-12 17:35:29,927 p=68218 u=root |  PLAY [Install, configure and deploy web page into nginx server] *************************
+2018-12-12 17:35:29,935 p=68218 u=root |  TASK [Gathering Facts] ******************************************************************
+2018-12-12 17:35:30,641 p=68218 u=root |  ok: [ubuntu2]
+2018-12-12 17:35:30,769 p=68218 u=root |  ok: [ubuntu1]
+2018-12-12 17:35:31,121 p=68218 u=root |  ok: [ubuntu3]
+2018-12-12 17:35:34,381 p=68218 u=root |  ok: [centos1]
+2018-12-12 17:35:34,392 p=68218 u=root |  ok: [centos2]
+2018-12-12 17:35:34,410 p=68218 u=root |  ok: [centos3]
+2018-12-12 17:35:34,425 p=68218 u=root |  TASK [Install nginx web server in Ubuntu] ***********************************************
+2018-12-12 17:35:34,452 p=68218 u=root |  skipping: [centos1]
+2018-12-12 17:35:34,473 p=68218 u=root |  skipping: [centos2]
+2018-12-12 17:35:34,495 p=68218 u=root |  skipping: [centos3]
+2018-12-12 17:35:36,358 p=68218 u=root |   [ERROR]: User interrupted execution
+
+2018-12-12 17:35:50,178 p=69045 u=root |  ERROR! Syntax Error while loading YAML.
+  mapping values are not allowed in this context
+
+The error appears to have been in '/root/Training/Day3/install-nginx-with-blocks.yml': line 54, column 11, but may
+be elsewhere in the file depending on the exact syntax problem.
+
+The offending line appears to be:
+
+
+    - name: Deploy customized web page
+          ^ here
+
+2018-12-12 17:38:35,133 p=69239 u=root |   [WARNING]: While constructing a mapping from /root/Training/Day3/install-nginx-with-
+blocks.yml, line 8, column 4, found a duplicate dict key (block). Using last defined
+value only.
+
+2018-12-12 17:38:35,134 p=69239 u=root |   [WARNING]: While constructing a mapping from /root/Training/Day3/install-nginx-with-
+blocks.yml, line 8, column 4, found a duplicate dict key (rescue). Using last defined
+value only.
+
+2018-12-12 17:38:35,134 p=69239 u=root |   [WARNING]: While constructing a mapping from /root/Training/Day3/install-nginx-with-
+blocks.yml, line 8, column 4, found a duplicate dict key (always). Using last defined
+value only.
+
+2018-12-12 17:38:35,134 p=69239 u=root |   [WARNING]: While constructing a mapping from /root/Training/Day3/install-nginx-with-
+blocks.yml, line 8, column 4, found a duplicate dict key (when). Using last defined
+value only.
+
+2018-12-12 17:38:35,142 p=69239 u=root |  ERROR! A malformed block was encountered while loading tasks
+
+The error appears to have been in '/root/Training/Day3/install-nginx-with-blocks.yml': line 1, column 3, but may
+be elsewhere in the file depending on the exact syntax problem.
+
+The offending line appears to be:
+
+
+- name: Install, configure and deploy web page into nginx server
+  ^ here
+
+2018-12-12 17:42:15,076 p=69542 u=root |  ERROR! Syntax Error while loading YAML.
+  did not find expected key
+
+The error appears to have been in '/root/Training/Day3/install-nginx-with-blocks.yml': line 24, column 4, but may
+be elsewhere in the file depending on the exact syntax problem.
+
+The offending line appears to be:
+
+         - Restart the nginx web server
+   rescue:
+   ^ here
+
+2018-12-12 17:42:53,013 p=69683 u=root |  ERROR! Syntax Error while loading YAML.
+  did not find expected key
+
+The error appears to have been in '/root/Training/Day3/install-nginx-with-blocks.yml': line 32, column 4, but may
+be elsewhere in the file depending on the exact syntax problem.
+
+The offending line appears to be:
+
+
+   - block:
+   ^ here
+
+2018-12-12 17:43:35,114 p=69821 u=root |  ERROR! Syntax Error while loading YAML.
+  did not find expected key
+
+The error appears to have been in '/root/Training/Day3/install-nginx-with-blocks.yml': line 55, column 4, but may
+be elsewhere in the file depending on the exact syntax problem.
+
+The offending line appears to be:
+
+
+   - block:
+   ^ here
+
+2018-12-12 17:53:25,484 p=71060 u=root |  ERROR! Syntax Error while loading YAML.
+  did not find expected key
+
+The error appears to have been in '/root/Training/Day3/install-nginx-with-blocks.yml': line 32, column 4, but may
+be elsewhere in the file depending on the exact syntax problem.
+
+The offending line appears to be:
+
+
+   - block:
+   ^ here
+
+2018-12-12 17:54:07,645 p=71203 u=root |  [DEPRECATION WARNING]: Included file '/root/Training/Day3/common-config.yml' not found, however since this 
+include is not explicitly marked as 'static: yes', we will try and include it dynamically later. In the future, 
+this will be an error unless 'static: no' is used on the include task. If you do not want missing includes to be
+ considered dynamic, use 'static: yes' on the include or set the global ansible.cfg options to make all includes
+ static for tasks and/or handlers. This feature will be removed in version 2.12. Deprecation warnings can be 
+disabled by setting deprecation_warnings=False in ansible.cfg.
+2018-12-12 17:54:07,789 p=71203 u=root |  PLAY [Install, configure and deploy web page into nginx server] *************************************************
+2018-12-12 17:54:07,797 p=71203 u=root |  TASK [Gathering Facts] ******************************************************************************************
+2018-12-12 17:54:08,477 p=71203 u=root |  ok: [ubuntu1]
+2018-12-12 17:54:08,546 p=71203 u=root |  ok: [ubuntu2]
+2018-12-12 17:54:08,919 p=71203 u=root |  ok: [ubuntu3]
+2018-12-12 17:54:12,033 p=71203 u=root |  ok: [centos3]
+2018-12-12 17:54:12,107 p=71203 u=root |  ok: [centos1]
+2018-12-12 17:54:12,139 p=71203 u=root |  ok: [centos2]
+2018-12-12 17:54:12,153 p=71203 u=root |  TASK [Install nginx web server in Ubuntu] ***********************************************************************
+2018-12-12 17:54:12,174 p=71203 u=root |  skipping: [centos1]
+2018-12-12 17:54:12,192 p=71203 u=root |  skipping: [centos2]
+2018-12-12 17:54:12,209 p=71203 u=root |  skipping: [centos3]
+2018-12-12 17:54:16,685 p=71203 u=root |  ok: [ubuntu3]
+2018-12-12 17:54:16,774 p=71203 u=root |  ok: [ubuntu2]
+2018-12-12 17:54:16,798 p=71203 u=root |  ok: [ubuntu1]
+2018-12-12 17:54:16,814 p=71203 u=root |  TASK [Configure nginx document root folder in Ubuntu] ***********************************************************
+2018-12-12 17:54:16,837 p=71203 u=root |  skipping: [centos1]
+2018-12-12 17:54:16,856 p=71203 u=root |  skipping: [centos2]
+2018-12-12 17:54:16,875 p=71203 u=root |  skipping: [centos3]
+2018-12-12 17:54:17,370 p=71203 u=root |  ok: [ubuntu2]
+2018-12-12 17:54:17,382 p=71203 u=root |  ok: [ubuntu3]
+2018-12-12 17:54:17,389 p=71203 u=root |  ok: [ubuntu1]
+2018-12-12 17:54:17,406 p=71203 u=root |  TASK [debug] ****************************************************************************************************
+2018-12-12 17:54:17,431 p=71203 u=root |  skipping: [centos1]
+2018-12-12 17:54:17,455 p=71203 u=root |  skipping: [centos2]
+2018-12-12 17:54:17,483 p=71203 u=root |  skipping: [centos3]
+2018-12-12 17:54:17,529 p=71203 u=root |  ok: [ubuntu1] => {
+    "msg": "Successfully installed, configured and deployed web page in ngin Ubuntu"
+}
+2018-12-12 17:54:17,560 p=71203 u=root |  ok: [ubuntu2] => {
+    "msg": "Successfully installed, configured and deployed web page in ngin Ubuntu"
+}
+2018-12-12 17:54:17,577 p=71203 u=root |  ok: [ubuntu3] => {
+    "msg": "Successfully installed, configured and deployed web page in ngin Ubuntu"
+}
+2018-12-12 17:54:17,596 p=71203 u=root |  TASK [Install Extra Package for Enterprise Linux in CentOS] *****************************************************
+2018-12-12 17:54:17,708 p=71203 u=root |  skipping: [ubuntu1]
+2018-12-12 17:54:17,714 p=71203 u=root |  skipping: [ubuntu2]
+2018-12-12 17:54:17,720 p=71203 u=root |  skipping: [ubuntu3]
+2018-12-12 17:54:25,053 p=71203 u=root |  ok: [centos3]
+2018-12-12 17:54:25,055 p=71203 u=root |  ok: [centos1]
+2018-12-12 17:54:26,048 p=71203 u=root |  ok: [centos2]
+2018-12-12 17:54:26,062 p=71203 u=root |  TASK [Install nginx web server in CentOS] ***********************************************************************
+2018-12-12 17:54:26,172 p=71203 u=root |  skipping: [ubuntu1]
+2018-12-12 17:54:26,173 p=71203 u=root |  skipping: [ubuntu2]
+2018-12-12 17:54:26,187 p=71203 u=root |  skipping: [ubuntu3]
+2018-12-12 17:54:33,230 p=71203 u=root |  ok: [centos3]
+2018-12-12 17:54:33,256 p=71203 u=root |  ok: [centos1]
+2018-12-12 17:54:33,387 p=71203 u=root |  ok: [centos2]
+2018-12-12 17:54:33,401 p=71203 u=root |  TASK [Configure nginx document root folder in CentOS] ***********************************************************
+2018-12-12 17:54:33,481 p=71203 u=root |  skipping: [ubuntu1]
+2018-12-12 17:54:33,500 p=71203 u=root |  skipping: [ubuntu2]
+2018-12-12 17:54:33,515 p=71203 u=root |  skipping: [ubuntu3]
+2018-12-12 17:54:33,809 p=71203 u=root |  ok: [centos2]
+2018-12-12 17:54:33,828 p=71203 u=root |  ok: [centos1]
+2018-12-12 17:54:33,858 p=71203 u=root |  ok: [centos3]
+2018-12-12 17:54:33,875 p=71203 u=root |  TASK [debug] ****************************************************************************************************
+2018-12-12 17:54:33,924 p=71203 u=root |  ok: [centos1] => {
+    "msg": "Successfully installed, configured and deployed web page in nginx CentOS"
+}
+2018-12-12 17:54:33,947 p=71203 u=root |  ok: [centos2] => {
+    "msg": "Successfully installed, configured and deployed web page in nginx CentOS"
+}
+2018-12-12 17:54:33,966 p=71203 u=root |  skipping: [ubuntu1]
+2018-12-12 17:54:33,985 p=71203 u=root |  ok: [centos3] => {
+    "msg": "Successfully installed, configured and deployed web page in nginx CentOS"
+}
+2018-12-12 17:54:33,986 p=71203 u=root |  skipping: [ubuntu2]
+2018-12-12 17:54:33,998 p=71203 u=root |  skipping: [ubuntu3]
+2018-12-12 17:54:34,013 p=71203 u=root |  TASK [include] **************************************************************************************************
+2018-12-12 17:54:34,160 p=71203 u=root |  fatal: [centos1]: FAILED! => {"reason": "Unable to retrieve file contents\nCould not find or access '/root/Training/Day3/common-config.yml' on the Ansible Controller.\nIf you are using a module and expect the file to exist on the remote, see the remote_src option"}
+2018-12-12 17:54:34,160 p=71203 u=root |  fatal: [centos2]: FAILED! => {"reason": "Unable to retrieve file contents\nCould not find or access '/root/Training/Day3/common-config.yml' on the Ansible Controller.\nIf you are using a module and expect the file to exist on the remote, see the remote_src option"}
+2018-12-12 17:54:34,160 p=71203 u=root |  fatal: [centos3]: FAILED! => {"reason": "Unable to retrieve file contents\nCould not find or access '/root/Training/Day3/common-config.yml' on the Ansible Controller.\nIf you are using a module and expect the file to exist on the remote, see the remote_src option"}
+2018-12-12 17:54:34,160 p=71203 u=root |  fatal: [ubuntu1]: FAILED! => {"reason": "Unable to retrieve file contents\nCould not find or access '/root/Training/Day3/common-config.yml' on the Ansible Controller.\nIf you are using a module and expect the file to exist on the remote, see the remote_src option"}
+2018-12-12 17:54:34,161 p=71203 u=root |  fatal: [ubuntu2]: FAILED! => {"reason": "Unable to retrieve file contents\nCould not find or access '/root/Training/Day3/common-config.yml' on the Ansible Controller.\nIf you are using a module and expect the file to exist on the remote, see the remote_src option"}
+2018-12-12 17:54:34,161 p=71203 u=root |  fatal: [ubuntu3]: FAILED! => {"reason": "Unable to retrieve file contents\nCould not find or access '/root/Training/Day3/common-config.yml' on the Ansible Controller.\nIf you are using a module and expect the file to exist on the remote, see the remote_src option"}
+2018-12-12 17:54:34,162 p=71203 u=root |  	to retry, use: --limit @/root/Training/Day3/install-nginx-with-blocks.retry
+
+2018-12-12 17:54:34,162 p=71203 u=root |  PLAY RECAP ******************************************************************************************************
+2018-12-12 17:54:34,162 p=71203 u=root |  centos1                    : ok=5    changed=0    unreachable=0    failed=1   
+2018-12-12 17:54:34,162 p=71203 u=root |  centos2                    : ok=5    changed=0    unreachable=0    failed=1   
+2018-12-12 17:54:34,163 p=71203 u=root |  centos3                    : ok=5    changed=0    unreachable=0    failed=1   
+2018-12-12 17:54:34,163 p=71203 u=root |  ubuntu1                    : ok=4    changed=0    unreachable=0    failed=1   
+2018-12-12 17:54:34,163 p=71203 u=root |  ubuntu2                    : ok=4    changed=0    unreachable=0    failed=1   
+2018-12-12 17:54:34,163 p=71203 u=root |  ubuntu3                    : ok=4    changed=0    unreachable=0    failed=1   
+2018-12-12 17:55:35,963 p=73033 u=root |  PLAY [Install, configure and deploy web page into nginx server] *************************************************
+2018-12-12 17:55:35,971 p=73033 u=root |  TASK [Gathering Facts] ******************************************************************************************
+2018-12-12 17:55:36,673 p=73033 u=root |  ok: [ubuntu1]
+2018-12-12 17:55:36,745 p=73033 u=root |  ok: [ubuntu2]
+2018-12-12 17:55:37,100 p=73033 u=root |  ok: [ubuntu3]
+2018-12-12 17:55:40,220 p=73033 u=root |  ok: [centos3]
+2018-12-12 17:55:40,237 p=73033 u=root |  ok: [centos2]
+2018-12-12 17:55:40,257 p=73033 u=root |  ok: [centos1]
+2018-12-12 17:55:40,271 p=73033 u=root |  TASK [Install nginx web server in Ubuntu] ***********************************************************************
+2018-12-12 17:55:40,294 p=73033 u=root |  skipping: [centos1]
+2018-12-12 17:55:40,310 p=73033 u=root |  skipping: [centos2]
+2018-12-12 17:55:40,325 p=73033 u=root |  skipping: [centos3]
+2018-12-12 17:55:44,970 p=73033 u=root |  ok: [ubuntu1]
+2018-12-12 17:55:45,035 p=73033 u=root |  ok: [ubuntu2]
+2018-12-12 17:55:45,066 p=73033 u=root |  ok: [ubuntu3]
+2018-12-12 17:55:45,082 p=73033 u=root |  TASK [Configure nginx document root folder in Ubuntu] ***********************************************************
+2018-12-12 17:55:45,106 p=73033 u=root |  skipping: [centos1]
+2018-12-12 17:55:45,127 p=73033 u=root |  skipping: [centos2]
+2018-12-12 17:55:45,146 p=73033 u=root |  skipping: [centos3]
+2018-12-12 17:55:45,633 p=73033 u=root |  ok: [ubuntu1]
+2018-12-12 17:55:45,658 p=73033 u=root |  ok: [ubuntu2]
+2018-12-12 17:55:45,660 p=73033 u=root |  ok: [ubuntu3]
+2018-12-12 17:55:45,675 p=73033 u=root |  TASK [debug] ****************************************************************************************************
+2018-12-12 17:55:45,698 p=73033 u=root |  skipping: [centos1]
+2018-12-12 17:55:45,717 p=73033 u=root |  skipping: [centos2]
+2018-12-12 17:55:45,735 p=73033 u=root |  skipping: [centos3]
+2018-12-12 17:55:45,789 p=73033 u=root |  ok: [ubuntu1] => {
+    "msg": "Successfully installed, configured and deployed web page in ngin Ubuntu"
+}
+2018-12-12 17:55:45,791 p=73033 u=root |  ok: [ubuntu2] => {
+    "msg": "Successfully installed, configured and deployed web page in ngin Ubuntu"
+}
+2018-12-12 17:55:45,820 p=73033 u=root |  ok: [ubuntu3] => {
+    "msg": "Successfully installed, configured and deployed web page in ngin Ubuntu"
+}
+2018-12-12 17:55:45,836 p=73033 u=root |  TASK [Install Extra Package for Enterprise Linux in CentOS] *****************************************************
+2018-12-12 17:55:45,949 p=73033 u=root |  skipping: [ubuntu1]
+2018-12-12 17:55:45,950 p=73033 u=root |  skipping: [ubuntu2]
+2018-12-12 17:55:45,976 p=73033 u=root |  skipping: [ubuntu3]
+2018-12-12 17:55:53,166 p=73033 u=root |  ok: [centos2]
+2018-12-12 17:55:53,177 p=73033 u=root |  ok: [centos3]
+2018-12-12 17:55:53,181 p=73033 u=root |  ok: [centos1]
+2018-12-12 17:55:53,197 p=73033 u=root |  TASK [Install nginx web server in CentOS] ***********************************************************************
+2018-12-12 17:55:53,301 p=73033 u=root |  skipping: [ubuntu1]
+2018-12-12 17:55:53,303 p=73033 u=root |  skipping: [ubuntu2]
+2018-12-12 17:55:53,314 p=73033 u=root |  skipping: [ubuntu3]
+2018-12-12 17:56:00,379 p=73033 u=root |  ok: [centos2]
+2018-12-12 17:56:00,488 p=73033 u=root |  ok: [centos3]
+2018-12-12 17:56:00,490 p=73033 u=root |  ok: [centos1]
+2018-12-12 17:56:00,505 p=73033 u=root |  TASK [Configure nginx document root folder in CentOS] ***********************************************************
+2018-12-12 17:56:00,594 p=73033 u=root |  skipping: [ubuntu1]
+2018-12-12 17:56:00,595 p=73033 u=root |  skipping: [ubuntu2]
+2018-12-12 17:56:00,606 p=73033 u=root |  skipping: [ubuntu3]
+2018-12-12 17:56:00,907 p=73033 u=root |  ok: [centos1]
+2018-12-12 17:56:00,917 p=73033 u=root |  ok: [centos2]
+2018-12-12 17:56:00,919 p=73033 u=root |  ok: [centos3]
+2018-12-12 17:56:00,933 p=73033 u=root |  TASK [debug] ****************************************************************************************************
+2018-12-12 17:56:00,990 p=73033 u=root |  ok: [centos1] => {
+    "msg": "Successfully installed, configured and deployed web page in nginx CentOS"
+}
+2018-12-12 17:56:01,006 p=73033 u=root |  ok: [centos2] => {
+    "msg": "Successfully installed, configured and deployed web page in nginx CentOS"
+}
+2018-12-12 17:56:01,039 p=73033 u=root |  skipping: [ubuntu1]
+2018-12-12 17:56:01,040 p=73033 u=root |  ok: [centos3] => {
+    "msg": "Successfully installed, configured and deployed web page in nginx CentOS"
+}
+2018-12-12 17:56:01,041 p=73033 u=root |  skipping: [ubuntu2]
+2018-12-12 17:56:01,051 p=73033 u=root |  skipping: [ubuntu3]
+2018-12-12 17:56:01,066 p=73033 u=root |  TASK [Create document root folder] ******************************************************************************
+2018-12-12 17:56:01,395 p=73033 u=root |  ok: [ubuntu1]
+2018-12-12 17:56:01,402 p=73033 u=root |  ok: [centos1]
+2018-12-12 17:56:01,443 p=73033 u=root |  ok: [centos2]
+2018-12-12 17:56:01,454 p=73033 u=root |  ok: [ubuntu2]
+2018-12-12 17:56:01,457 p=73033 u=root |  ok: [centos3]
+2018-12-12 17:56:01,598 p=73033 u=root |  ok: [ubuntu3]
+2018-12-12 17:56:01,617 p=73033 u=root |  TASK [Deploy customized web page] *******************************************************************************
+2018-12-12 17:56:02,129 p=73033 u=root |  ok: [centos1]
+2018-12-12 17:56:02,143 p=73033 u=root |  ok: [ubuntu1]
+2018-12-12 17:56:02,177 p=73033 u=root |  ok: [ubuntu2]
+2018-12-12 17:56:02,183 p=73033 u=root |  ok: [centos2]
+2018-12-12 17:56:02,223 p=73033 u=root |  ok: [centos3]
+2018-12-12 17:56:02,442 p=73033 u=root |  ok: [ubuntu3]
+2018-12-12 17:56:02,445 p=73033 u=root |  PLAY RECAP ******************************************************************************************************
+2018-12-12 17:56:02,445 p=73033 u=root |  centos1                    : ok=7    changed=0    unreachable=0    failed=0   
+2018-12-12 17:56:02,445 p=73033 u=root |  centos2                    : ok=7    changed=0    unreachable=0    failed=0   
+2018-12-12 17:56:02,445 p=73033 u=root |  centos3                    : ok=7    changed=0    unreachable=0    failed=0   
+2018-12-12 17:56:02,445 p=73033 u=root |  ubuntu1                    : ok=6    changed=0    unreachable=0    failed=0   
+2018-12-12 17:56:02,445 p=73033 u=root |  ubuntu2                    : ok=6    changed=0    unreachable=0    failed=0   
+2018-12-12 17:56:02,445 p=73033 u=root |  ubuntu3                    : ok=6    changed=0    unreachable=0    failed=0   

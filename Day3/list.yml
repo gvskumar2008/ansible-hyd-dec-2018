@@ -1,0 +1,22 @@
+- name: Demonstrates use of list varaible and navigation of list
+  hosts: localhost
+
+  vars:
+    software_tools:
+       - vim
+       - tree
+       - cscope
+       - default-jdk
+       - maven
+       - nginx
+
+  tasks:
+    - name: Print all software tools
+      debug: var=item
+      with_list: "{{software_tools}}"
+
+- name: This is the second play
+  hosts: all
+  tasks:
+    - name: Ping all the containers
+      ping:

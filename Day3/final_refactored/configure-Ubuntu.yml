@@ -1,0 +1,4 @@
+- name: Configure nginx document root folder in Ubuntu
+  copy: src=default dest=/etc/nginx/sites-available/default
+  notify:
+     - Restart the nginx web server

@@ -1,0 +1,9 @@
+- name: Install Extra Package for Enterprise Linux in CentOS 
+  yum: name=epel-release state=latest 
+  notify:
+     - Restart the nginx web server
+
+- name: Install nginx web server in CentOS 
+  yum: name=nginx state=latest 
+  notify:
+     - Restart the nginx web server
