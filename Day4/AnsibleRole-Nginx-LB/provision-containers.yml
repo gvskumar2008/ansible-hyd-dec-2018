@@ -1,0 +1,51 @@
+- name: This playbook will provision Ubuntu and CentOS docker containers
+  hosts: localhost
+  gather_facts: False
+
+  pre_tasks:
+     - name: Remove all existing containers
+       shell: docker rm -f $(docker ps -aq)
+       ignore_errors: True
+  
+  tasks:
+    - name: Install Extra Packages for Enterprise Linux
+      yum: name=epel-release state=latest
+
+    - name: Install Python Package Installer
+      #apt: name=python-pip state=latest update_cache=yes
+      yum: name=python-pip state=latest
+
+    - name: Install docker-py python package
+      shell: pip install docker-py
+
+    - name: Provision an Ubuntu container
+      docker_container:
+          name: "ubuntu{{item}}"
+          image: "tektutor/ansible-ubuntu"
+          state: started
+          hostname: "ubuntu{{item}}"
+          ports:
+            - "2{{item}}:22"
+            - "8{{item}}:80"
+      with_sequence: start=1 end=2 format="%03i"
+
+    - name: Provision a CentOS container
+      docker_container:
+          name: "centos{{item}}"
+          image: "tektutor/ansible-centos"
+          state: started
+          hostname: "centos{{item}}"
+          ports:
+            - "3{{item}}:22"
+            - "9{{item}}:80"
+      with_sequence: start=1 end=2 format="%03i"
+
+    - name: Provision an Ubuntu nginx load balancer container
+      docker_container:
+          name: load-balancer
+          image: "tektutor/ansible-ubuntu"
+          state: started
+          hostname: load-balancer
+          ports:
+            - "2222:22"
+            - "80:80"

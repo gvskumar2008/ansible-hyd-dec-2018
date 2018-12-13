@@ -1,0 +1,8 @@
+- name: Demonstrates use of ansible vault feature 
+  hosts: localhost
+  vars_files:
+    - contacts_file
+  tasks:
+    - name: Print all contact details
+      debug: msg="Mobile number of {{item.value.name}} is {{item.value.mobile}}."
+      with_dict: "{{contacts}}"

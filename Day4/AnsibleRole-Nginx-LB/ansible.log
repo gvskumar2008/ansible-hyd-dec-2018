@@ -1,0 +1,79 @@
+2018-12-13 13:01:06,161 p=27119 u=root |  ubuntu001 | SUCCESS => {
+    "changed": false, 
+    "ping": "pong"
+}
+2018-12-13 13:01:06,167 p=27119 u=root |  ubuntu002 | SUCCESS => {
+    "changed": false, 
+    "ping": "pong"
+}
+2018-12-13 13:01:06,168 p=27119 u=root |  loadbalancer | SUCCESS => {
+    "changed": false, 
+    "ping": "pong"
+}
+2018-12-13 13:01:06,186 p=27119 u=root |  centos002 | SUCCESS => {
+    "changed": false, 
+    "ping": "pong"
+}
+2018-12-13 13:01:06,188 p=27119 u=root |  centos001 | SUCCESS => {
+    "changed": false, 
+    "ping": "pong"
+}
+2018-12-13 13:01:20,827 p=27484 u=root |  PLAY [Setup nginx] *************************************************************
+2018-12-13 13:01:20,835 p=27484 u=root |  TASK [Gathering Facts] *********************************************************
+2018-12-13 13:01:21,459 p=27484 u=root |  ok: [ubuntu001]
+2018-12-13 13:01:21,462 p=27484 u=root |  ok: [ubuntu002]
+2018-12-13 13:01:21,466 p=27484 u=root |  ok: [loadbalancer]
+2018-12-13 13:01:21,757 p=27484 u=root |  ok: [centos002]
+2018-12-13 13:01:21,760 p=27484 u=root |  ok: [centos001]
+2018-12-13 13:01:21,770 p=27484 u=root |  TASK [nginx : include] *********************************************************
+2018-12-13 13:01:21,890 p=27484 u=root |  included: /root/Training/Day4/AnsibleRole-Nginx-LB/nginx/tasks/install-Ubuntu.yml for ubuntu002, ubuntu001, loadbalancer
+2018-12-13 13:01:21,893 p=27484 u=root |  included: /root/Training/Day4/AnsibleRole-Nginx-LB/nginx/tasks/install-CentOS.yml for centos001, centos002
+2018-12-13 13:01:21,906 p=27484 u=root |  TASK [nginx : Install nginx web server in Ubuntu] ******************************
+2018-12-13 13:01:38,314 p=27484 u=root |  changed: [loadbalancer]
+2018-12-13 13:01:38,656 p=27484 u=root |  changed: [ubuntu001]
+2018-12-13 13:01:38,700 p=27484 u=root |  changed: [ubuntu002]
+2018-12-13 13:01:38,717 p=27484 u=root |  TASK [nginx : Install Extra Package for Enterprise Linux in CentOS] ************
+2018-12-13 13:01:43,235 p=27484 u=root |  changed: [centos001]
+2018-12-13 13:01:43,556 p=27484 u=root |  changed: [centos002]
+2018-12-13 13:01:43,568 p=27484 u=root |  TASK [nginx : Install nginx web server in CentOS] ******************************
+2018-12-13 13:02:15,221 p=27484 u=root |  changed: [centos001]
+2018-12-13 13:02:16,850 p=27484 u=root |  changed: [centos002]
+2018-12-13 13:02:16,860 p=27484 u=root |  TASK [nginx : include] *********************************************************
+2018-12-13 13:02:16,992 p=27484 u=root |  included: /root/Training/Day4/AnsibleRole-Nginx-LB/nginx/tasks/configure-Ubuntu.yml for ubuntu002, ubuntu001, loadbalancer
+2018-12-13 13:02:16,994 p=27484 u=root |  included: /root/Training/Day4/AnsibleRole-Nginx-LB/nginx/tasks/configure-CentOS.yml for centos001, centos002
+2018-12-13 13:02:17,017 p=27484 u=root |  TASK [nginx : Configure nginx document root folder in Ubuntu] ******************
+2018-12-13 13:02:17,605 p=27484 u=root |  changed: [ubuntu001]
+2018-12-13 13:02:17,607 p=27484 u=root |  changed: [loadbalancer]
+2018-12-13 13:02:17,609 p=27484 u=root |  changed: [ubuntu002]
+2018-12-13 13:02:17,622 p=27484 u=root |  TASK [nginx : Configure nginx document root folder in CentOS] ******************
+2018-12-13 13:02:18,017 p=27484 u=root |  changed: [centos001]
+2018-12-13 13:02:18,030 p=27484 u=root |  changed: [centos002]
+2018-12-13 13:02:18,041 p=27484 u=root |  TASK [nginx : Create document root folder] *************************************
+2018-12-13 13:02:18,484 p=27484 u=root |  changed: [ubuntu001]
+2018-12-13 13:02:18,490 p=27484 u=root |  changed: [centos001]
+2018-12-13 13:02:18,496 p=27484 u=root |  changed: [ubuntu002]
+2018-12-13 13:02:18,498 p=27484 u=root |  changed: [centos002]
+2018-12-13 13:02:18,503 p=27484 u=root |  changed: [loadbalancer]
+2018-12-13 13:02:18,519 p=27484 u=root |  TASK [nginx : Deploy customized web page] **************************************
+2018-12-13 13:02:19,135 p=27484 u=root |  changed: [ubuntu002]
+2018-12-13 13:02:19,171 p=27484 u=root |  changed: [loadbalancer]
+2018-12-13 13:02:19,175 p=27484 u=root |  changed: [ubuntu001]
+2018-12-13 13:02:19,201 p=27484 u=root |  changed: [centos001]
+2018-12-13 13:02:19,229 p=27484 u=root |  changed: [centos002]
+2018-12-13 13:02:19,232 p=27484 u=root |  RUNNING HANDLER [nginx : Restart the nginx web server] *************************
+2018-12-13 13:02:19,745 p=27484 u=root |   [WARNING]: Consider using the service module rather than running service.  If
+you need to use command because service is insufficient you can add warn=False
+to this command task or set command_warnings=False in ansible.cfg to get rid of
+this message.
+
+2018-12-13 13:02:19,745 p=27484 u=root |  changed: [centos002]
+2018-12-13 13:02:19,746 p=27484 u=root |  changed: [centos001]
+2018-12-13 13:02:20,674 p=27484 u=root |  changed: [ubuntu001]
+2018-12-13 13:02:20,677 p=27484 u=root |  changed: [loadbalancer]
+2018-12-13 13:02:20,678 p=27484 u=root |  changed: [ubuntu002]
+2018-12-13 13:02:20,679 p=27484 u=root |  PLAY RECAP *********************************************************************
+2018-12-13 13:02:20,680 p=27484 u=root |  centos001                  : ok=9    changed=6    unreachable=0    failed=0   
+2018-12-13 13:02:20,680 p=27484 u=root |  centos002                  : ok=9    changed=6    unreachable=0    failed=0   
+2018-12-13 13:02:20,680 p=27484 u=root |  loadbalancer               : ok=8    changed=5    unreachable=0    failed=0   
+2018-12-13 13:02:20,680 p=27484 u=root |  ubuntu001                  : ok=8    changed=5    unreachable=0    failed=0   
+2018-12-13 13:02:20,680 p=27484 u=root |  ubuntu002                  : ok=8    changed=5    unreachable=0    failed=0   

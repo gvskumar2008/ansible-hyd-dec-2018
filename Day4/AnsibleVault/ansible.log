@@ -1,0 +1,30 @@
+2018-12-13 10:34:20,889 p=9414 u=root |  PLAY [Demonstrates use of ansible vault feature] *******************************
+2018-12-13 10:34:20,896 p=9414 u=root |  TASK [Gathering Facts] *********************************************************
+2018-12-13 10:34:21,570 p=9414 u=root |  ok: [localhost]
+2018-12-13 10:34:21,596 p=9414 u=root |  TASK [Print all contact details] ***********************************************
+2018-12-13 10:34:21,626 p=9414 u=root |  ok: [localhost] => (item={'value': {u'mobile': u'453-234-3422', u'name': u'Ganesan Rajagopalan'}, 'key': u'Ganesh'}) => {
+    "msg": "Mobile number of Ganesan Rajagopalan is 453-234-3422."
+}
+2018-12-13 10:34:21,629 p=9414 u=root |  ok: [localhost] => (item={'value': {u'mobile': u'123-456-7890', u'name': u'Ramakrishnan'}, 'key': u'Ram'}) => {
+    "msg": "Mobile number of Ramakrishnan is 123-456-7890."
+}
+2018-12-13 10:34:21,633 p=9414 u=root |  ok: [localhost] => (item={'value': {u'mobile': u'534-532-6432', u'name': u'Sriram J'}, 'key': u'Sriram'}) => {
+    "msg": "Mobile number of Sriram J is 534-532-6432."
+}
+2018-12-13 10:34:21,636 p=9414 u=root |  PLAY RECAP *********************************************************************
+2018-12-13 10:34:21,637 p=9414 u=root |  localhost                  : ok=2    changed=0    unreachable=0    failed=0   
+2018-12-13 10:34:49,705 p=9752 u=root |  PLAY [Demonstrates use of ansible vault feature] *******************************
+2018-12-13 10:34:49,712 p=9752 u=root |  TASK [Gathering Facts] *********************************************************
+2018-12-13 10:34:50,373 p=9752 u=root |  ok: [localhost]
+2018-12-13 10:34:50,399 p=9752 u=root |  TASK [Print all contact details] ***********************************************
+2018-12-13 10:34:50,434 p=9752 u=root |  ok: [localhost] => (item={'value': {u'mobile': u'453-234-3422', u'name': u'Ganesan Rajagopalan'}, 'key': u'Ganesh'}) => {
+    "msg": "Mobile number of Ganesan Rajagopalan is 453-234-3422."
+}
+2018-12-13 10:34:50,437 p=9752 u=root |  ok: [localhost] => (item={'value': {u'mobile': u'123-456-7890', u'name': u'Ramakrishnan'}, 'key': u'Ram'}) => {
+    "msg": "Mobile number of Ramakrishnan is 123-456-7890."
+}
+2018-12-13 10:34:50,443 p=9752 u=root |  ok: [localhost] => (item={'value': {u'mobile': u'534-532-6432', u'name': u'Sriram J'}, 'key': u'Sriram'}) => {
+    "msg": "Mobile number of Sriram J is 534-532-6432."
+}
+2018-12-13 10:34:50,446 p=9752 u=root |  PLAY RECAP *********************************************************************
+2018-12-13 10:34:50,446 p=9752 u=root |  localhost                  : ok=2    changed=0    unreachable=0    failed=0   

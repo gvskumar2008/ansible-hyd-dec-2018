@@ -1,0 +1,9 @@
+- name: Setup nginx 
+  hosts: all
+  roles:
+    - nginx 
+
+- name: Setup load balancer
+  hosts: loadbalancer
+  roles
+    - nginx-load-balancer
