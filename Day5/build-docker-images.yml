@@ -7,6 +7,14 @@
     - name: Install docker-py python package
       shell: pip install docker-py
 
+    - name: Remove all existing containers
+      shell: docker rm -f $(docker ps -aq)
+      ignore_errors: True
+
+    - name: Remove jenkins slave docker image
+      shell: docker rmi tektutor/jenkins-slave
+      ignore_errors: True
+
     - name: Build ansible ubuntu images
       docker_image:
          name: "tektutor/jenkins-slave"
