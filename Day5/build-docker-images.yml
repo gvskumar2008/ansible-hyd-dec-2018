@@ -1,6 +1,12 @@
 - name: This playbook automates docker image build
   hosts: localhost
   tasks:
+    - name: Install python-pip 
+      apt: name=python-pip state=latest update_cache=yes
+
+    - name: Install docker-py python package
+      shell: pip install docker-py
+
     - name: Build ansible ubuntu images
       docker_image:
          name: "tektutor/jenkins-slave"
