@@ -1,0 +1,33 @@
+List docker images
+docker images
+
+List all running containers
+docker ps
+
+List all containers including exited containers
+docker ps -a
+
+List all running container id alone
+docker ps -q
+
+List all containers ids including exited containers
+docker ps -aq
+
+Remove a container
+docker rm -f <container-id>
+docker rm -f <container-name>
+
+Remove image
+docker rmi -f <image-name>
+
+Pull/Download a image
+docker pull <image-name>
+
+Stop and remove all containers
+docker stop $(docker ps -q) && docker rm $(docker ps -aq)
+
+Create docker volume
+docker volume create my-vol
+
+Attach the docker volume to a container
+docker run -dit --name ubuntu1 --mount source=my-vol,target=/root/data ubuntu /bin/bash
